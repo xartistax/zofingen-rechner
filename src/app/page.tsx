@@ -1,18 +1,21 @@
-import React from 'react';
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 
-import ReactPDF from '@react-pdf/renderer';
-import PDFFile from './components/PDFFile';
-import PDFComponent from './components/PDFComponent';
+"use client"
+import { Survey } from 'survey-react-ui';
+import { Calculator } from './utils/calculations';
+import { surveyJson } from './utils/surveyJson';
+import React, { useEffect, useState, useCallback } from 'react';
+import { Model } from 'survey-core';
+import 'survey-core/defaultV2.min.css';
+import { AppProvider, useAppContext } from './utils/AppContext';
+import SurveyComponent from './components/Survey/SurveyComponent';
 
- 
+export default function App() {
 
-
-export default function App ()  {
   return (
-    <div>
-      <h1>My PDF Viewer</h1> 
-      <PDFComponent /> 
-    </div>
+    
+    <AppProvider>
+      <SurveyComponent></SurveyComponent>
+    </AppProvider>
+      
   );
-};
+}

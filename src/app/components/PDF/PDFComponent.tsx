@@ -1,8 +1,21 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import PDFCreate from './PDFCreate';
+import { AppContextType } from '@/app/utils/AppContext';
+import { DebugValues } from '../Survey/SurveyComponent';
 
-const PDFComponent = () => {
+
+interface PDFComponentProps {
+    uuid: string;
+    debugValues: DebugValues
+  }
+
+
+
+
+
+
+  const PDFComponent: React.FC<PDFComponentProps> = ({ uuid, debugValues}) => {
     const [createPDF, setCreatePDF] = useState(false);
     const [isCreatingPDF, setIsCreatingPDF] = useState(false);
 
@@ -12,8 +25,9 @@ const PDFComponent = () => {
 
     useEffect(() => {
         if (createPDF) {
+            console.log(debugValues)
             setIsCreatingPDF(true);
-            PDFCreate(createPDF).then(() => {
+            PDFCreate(createPDF, uuid, debugValues).then(() => {
                 setIsCreatingPDF(false); // Update the indicator when PDF creation is completed
             });
         }
@@ -22,7 +36,7 @@ const PDFComponent = () => {
     return (
         <div>
             <button disabled={isCreatingPDF} onClick={() => setCreatePDF(true)}>
-                {isCreatingPDF ? 'Creating PDF...' : 'Create PDF'}
+                {isCreatingPDF ? 'Creating PDF...' : null}
             </button>
             {isCreatingPDF && <div>PDF is being created...</div>}
         </div>
