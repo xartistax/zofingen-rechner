@@ -8,3 +8,10 @@
 .hidden {
   display: none;
 }
+
+
+.sd-root-modern {
+
+  background-color: var(--sjs-general-backcolor-dim, var(--background-dim, #fff));
+
+}

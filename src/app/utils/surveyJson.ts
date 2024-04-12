@@ -1,6 +1,4 @@
 export const surveyJson = {
-    "title": "Zofingen Treuhand",
-    "description": "Rechner",
     "logoPosition": "right",
     "pages": [
      {
@@ -10,7 +8,11 @@ export const surveyJson = {
         "type": "text",
         "name": "question1",
         "title": "Wie viele Rechnungen bezahlen Sie pro Monat?*",
-        "inputType": "number"
+        "isRequired": true,
+        "requiredErrorText": "Dieses Feld ist zwingend",
+        "inputType": "number",
+        "minErrorText": "Der Wert muss weniger als {0} sein",
+        "maxErrorText": "Der Wert muss grösser als {0} sein"
        }
       ]
      },
@@ -21,7 +23,11 @@ export const surveyJson = {
         "type": "text",
         "name": "question2",
         "title": "Wie viele Rechnungen verschicken Sie pro Monat?*\n",
-        "inputType": "number"
+        "isRequired": true,
+        "requiredErrorText": "Dieses Feld ist zwingend",
+        "inputType": "number",
+        "minErrorText": "Der Wert muss weniger als {0} sein",
+        "maxErrorText": "Der Wert muss grösser als {0} sein"
        }
       ]
      },
@@ -32,6 +38,8 @@ export const surveyJson = {
         "type": "dropdown",
         "name": "question3",
         "title": "Sind Sie für die Mehrwertsteuer angemeldet?\n",
+        "isRequired": true,
+        "requiredErrorText": "Dieses Feld ist zwingend",
         "choices": [
          {
           "value": "Item 1",
@@ -60,12 +68,21 @@ export const surveyJson = {
         "type": "text",
         "name": "question4",
         "title": "Wie viele Mitarbeitende haben Sie?\n",
-        "inputType": "number"
+        "isRequired": true,
+        "requiredErrorText": "Dieses Feld ist zwingend",
+        "inputType": "number",
+        "minErrorText": "Der Wert muss weniger als {0} sein",
+        "maxErrorText": "Der Wert muss grösser als {0} sein"
        }
       ]
      }
     ],
+    "showPageTitles": false,
+    "showCompletedPage": false,
     "navigateToUrlOnCondition": [
      {}
-    ]
-}
+    ],
+    "pagePrevText": "Zurück",
+    "pageNextText": "Weiter",
+    "completeText": "Abschliessen"
+   }

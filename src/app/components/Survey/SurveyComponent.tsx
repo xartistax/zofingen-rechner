@@ -9,6 +9,9 @@ import 'survey-core/defaultV2.min.css';
 import { AppProvider, useAppContext } from '../../utils/AppContext';
 import PDFComponent from '../PDF/PDFComponent';
 import uuid from 'react-uuid';
+import {  handleSubmitAndCreatePDF } from '@/app/utils/submitForm';
+// @ts-ignore
+import { DefaultLightPanelless } from "survey-core/themes/default-light-panelless";
 
 
 export interface DebugValues {
@@ -33,12 +36,20 @@ export default function SurveyComponent() {
 
 
   const [ createPDF, setCreatePDF ] = useState(false);
+  const [ email, setEmail ] = useState("");
   
 
   const { showSurveyResult, setShowSurveyResult } = useAppContext();
   const { monthlyCost, setMonthlyCost } = useAppContext();
   const { showSurvey, setShowSurvey } = useAppContext();
   const { debugValues, setDebugValues } = useAppContext();
+
+
+  const survey = new Model(surveyJson);
+  survey.applyTheme(DefaultLightPanelless);
+
+
+  const handleFormSubmit = handleSubmitAndCreatePDF(email, generatedUuid, setCreatePDF)
 
 
 
@@ -60,15 +71,6 @@ export default function SurveyComponent() {
       const total = rechnungen_1 + rechnungen_2 + mwst + mitarbeiter;
       const monthly = total / 12;
 
-      console.log(monthly)
-
-      setMonthlyCost(monthly.toFixed(2));
-      setShowSurvey(false);
-      setShowSurveyResult(true);
-      
-      
-
-
       const debugValues: DebugValues = {
         rechnungen_1,
         rechnungen_2,
@@ -78,7 +80,14 @@ export default function SurveyComponent() {
         monthly: String(monthly),
     };
 
-    setDebugValues(debugValues)
+      setMonthlyCost(monthly.toFixed(2)); 
+      setShowSurvey(false);
+      setShowSurveyResult(true);
+      setDebugValues(debugValues)
+      
+
+
+    
 
 
       
@@ -104,31 +113,67 @@ export default function SurveyComponent() {
     }
   }, [showSurveyResult]);
 
+  
+
   return (
     
       <main className="min-h-screen">
         {showSurvey && (
           <Survey
-            model={new Model(surveyJson)}
+            model={survey}
             onComplete={handleSurveyComplete}
           />
         )}
 
         {showSurveyResult && (
-          <div id="surveyResult" className="show">
-            <p style={{ fontSize: "24px", lineHeight: "1.5", fontWeight: "900" }}>
-              Gemäss Ihren Angaben kostet Sie unser Service:
-              <div>
-                <span className="totalValueBox">
-                  <span className="currencyIndicator">CHF</span>
-                  <span id="totalValue">{monthlyCost}</span> / Monat
-                </span>
-                <span className="currencyText">inkl. MwSt</span>
-              </div>
-              {/* Add debug information here */}
-              <a id="create_pdf"   onClick={() => setCreatePDF(true)} >PDF anfordern</a>
-            </p>
-          </div>
+          <div id="surveyResult" className="show p-12">
+          <p style={{ fontSize: "24px", lineHeight: "1.5", fontWeight: "900" }}>
+            Gemäss Ihren Angaben kostet Sie unser Service:
+            <div>
+              <span className="totalValueBox">
+                <span className="currencyIndicator">CHF </span>
+                <span id="totalValue">{monthlyCost}</span> / Monat
+              </span>
+              <span className="currencyText"> exkl. MwSt</span>
+            </div>
+        
+            <a id="create_pdf" onClick={() => setCreatePDF(true)}>PDF anfordern</a> 
+            
+          </p>
+        
+          <p style={{ fontSize: "16px", fontWeight: "light" }} className='mt-5'>
+            Möchten Sie ein detailliertes Angebot als PDF erhalten? Tragen Sie einfach nachfolgend Ihre E-Mail-Adresse ein.
+          </p>
+        
+          {/* Email input field and submit button */}
+          <form className='mt-5' onSubmit={handleFormSubmit}>
+  <div className="mb-4">
+    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+      Ihre E-Mail-Adresse
+    </label>
+    <div className="flex items-center"> {/* Flex container for input and button */}
+      <input 
+        value={email} 
+        onChange={(e) => setEmail(e.target.value)} 
+        type="email" 
+        className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+        id="email" 
+        placeholder="Ihre E-Mail-Adresse" 
+        style={{ flexGrow: 2 }}  // Adjust input field width relative to button
+      />
+      <button 
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-4" // More padding and margin-left for spacing
+        type="submit"
+        style={{ flexGrow: 1 }}  // Adjust button width
+      >
+        Angebot als PDF erhalten
+      </button>
+    </div>
+  </div>
+</form>
+
+
+        </div>
         )}
 
 

@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mailerlite/mailerlite-nodejs": "^1.2.1",
     "@react-pdf/renderer": "^3.4.2",
     "@types/node-fetch": "^2.6.11",
     "body-parser": "^1.20.2",
+    "date-fns": "^3.6.0",
     "jspdf": "^2.5.1",
     "next": "14.1.4",
     "react": "^18",
