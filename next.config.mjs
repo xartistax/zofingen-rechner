@@ -3,6 +3,7 @@
 
 const nextConfig = {
   distDir: "build",
+  nftTracing: true ,
     experimental: {
       serverComponentsExternalPackages: ['@react-pdf/renderer'],
     },
