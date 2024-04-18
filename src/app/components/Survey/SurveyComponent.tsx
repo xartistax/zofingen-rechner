@@ -94,7 +94,7 @@ export default function SurveyComponent() {
 
       
     }
-  }, []);
+  }, [setDebugValues, setMonthlyCost, setShowSurvey, setShowSurveyResult]);
 
 
   useEffect(() => {
@@ -111,7 +111,7 @@ export default function SurveyComponent() {
         surveyResult.style.minHeight = 'auto';
       }
     }
-  }, [showSurveyResult]);
+  }, [showSurveyResult, monthlyCost]);
 
   
 

@@ -31,7 +31,7 @@ interface PDFComponentProps {
                 setIsCreatingPDF(false); // Update the indicator when PDF creation is completed
             });
         }
-    }, [createPDF]);
+    }, [createPDF, debugValues, uuid]);
 
     return (
         <div>
