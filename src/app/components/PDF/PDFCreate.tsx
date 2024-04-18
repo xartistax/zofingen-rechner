@@ -14,21 +14,20 @@ import path from 'path'; // Import path module
 
 export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues) => {
     try {
-        // Construct the absolute path to the PDF file
+
+        const resolvedPdfDirectoryPath = path.resolve(pdfsDirectory);
         const pdfFilePath = path.resolve(pdfsDirectory, `${uuid}.pdf`);
 
-        // Ensure that the directory exists, create it if it doesn't
-        //const pdfDirectoryPath = path.dirname(pdfFilePath);
+        if (!fs.existsSync(resolvedPdfDirectoryPath)) {
+                fs.mkdirSync(resolvedPdfDirectoryPath, { recursive: true });
+            }
 
-        // Resolve the directory path
-        //const resolvedPdfDirectoryPath = path.resolve(pdfDirectoryPath);
+    
 
-        //if (!fs.existsSync(resolvedPdfDirectoryPath)) {
-        //    fs.mkdirSync(resolvedPdfDirectoryPath, { recursive: true });
-        //}
+        await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
 
-        // Proceed with rendering the PDF
-       //await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
+
+
 
        console.log("done")
 

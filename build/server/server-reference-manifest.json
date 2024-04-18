@@ -47,16 +47,8 @@
       "layer": {
         "app/page": "action-browser"
       }
-    },
-    "dfdf81ff6d6b58b22bbb291f76e5700e35f55e3e": {
-      "workers": {
-        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fdemianfuglistaler%2FProjects%2Fzofingen-treuhand-rechner%2Fsrc%2Fapp%2Fcomponents%2FPDF%2FPDFCreate.tsx%22%2C%5B%22PDFCreator%22%2C%22%24%24ACTION_0%22%2C%22default%22%5D%5D%2C%5B%22%2FUsers%2Fdemianfuglistaler%2FProjects%2Fzofingen-treuhand-rechner%2Fsrc%2Fapp%2Futils%2FuploadPDFToVercel.ts%22%2C%5B%22%24%24ACTION_0%22%2C%22uploadPDFToVercel%22%2C%22getFileByUUID%22%5D%5D%5D&__client_imported__=true!"
-      },
-      "layer": {
-        "app/page": "action-browser"
-      }
     }
   },
   "edge": {},
-  "encryptionKey": "+aytWEtb+UAnxFKmvr52xhJSo/8zbhPkPHgfh1pOyM8="
+  "encryptionKey": "zHWwwjzsAuLmreVlKs6H06oa2kJLNm6l3VtH0zN5zEc="
 }

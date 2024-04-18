@@ -12,7 +12,7 @@ export const uploadPDFToVercel = async (uuid: string, email: string): Promise<st
 
 
 
-    console.log("dr: " + pdfsDirectory)
+    
     
 
     try {
@@ -23,14 +23,6 @@ export const uploadPDFToVercel = async (uuid: string, email: string): Promise<st
 
 
 
-
-// Check if the directory exists, create it if it doesn't
-const resolvedPdfsDirectory = path.resolve(pdfsDirectory);
-if (!fs.existsSync(resolvedPdfsDirectory)) {
-    console.log("Directory doesn't exist: " + resolvedPdfsDirectory);
-} else {
-    console.log("Directory does exist: " + resolvedPdfsDirectory);
-}
 
 
        
