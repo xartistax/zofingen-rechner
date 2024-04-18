@@ -18,7 +18,7 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
         const pdfFilePath = path.resolve(pdfsDirectory, `${uuid}.pdf`);
 
         // Ensure that the directory exists, create it if it doesn't
-        const pdfDirectoryPath = path.dirname(pdfFilePath);
+        //const pdfDirectoryPath = path.dirname(pdfFilePath);
 
         
 
