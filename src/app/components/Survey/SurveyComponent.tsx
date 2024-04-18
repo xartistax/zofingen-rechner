@@ -45,8 +45,8 @@ export default function SurveyComponent() {
   const { monthlyCost, setMonthlyCost } = useAppContext();
   const { showSurvey, setShowSurvey } = useAppContext();
   const { debugValues, setDebugValues } = useAppContext();
-
-
+  const [showMessage, setShowMessage] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
   const survey = new Model(surveyJson);
   survey.applyTheme(DefaultLightPanelless);
 
@@ -57,10 +57,11 @@ export default function SurveyComponent() {
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-
+    setButtonClicked(true); 
     await handleFormSubmitAsync(debugValues, email, generatedUuid, createPDF, setCreatePDF);
 
 };
+
 
 
 
@@ -126,6 +127,20 @@ export default function SurveyComponent() {
 
 
 
+  useEffect(() => {
+    if (createPDF) {
+      // Set showMessage to true when createPDF becomes true
+      setShowMessage(true);
+  
+      // After 5 seconds, toggle showMessage back to false
+      const timeoutId = setTimeout(() => {
+        setShowMessage(false);
+      }, 5000);
+  
+      // Clear the timeout if the component unmounts or if showMessage becomes false before the timeout completes
+      return () => clearTimeout(timeoutId);
+    }
+  }, [createPDF]);
 
   
   
@@ -144,13 +159,13 @@ export default function SurveyComponent() {
           <div id="surveyResult" className="show p-12">
           <p style={{ fontSize: "24px", lineHeight: "1.5", fontWeight: "900" }}>
             Gemäss Ihren Angaben kostet Sie unser Service:
-            <div>
+          
               <span className="totalValueBox">
                 <span className="currencyIndicator">CHF </span>
                 <span id="totalValue">{monthlyCost}</span> / Monat
               </span>
               <span className="currencyText"> exkl. MwSt</span>
-            </div>
+    
         
             <a id="create_pdf" onClick={() => setCreatePDF(true)}>PDF anfordern</a> 
             
@@ -179,11 +194,14 @@ export default function SurveyComponent() {
       <button 
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-4" // More padding and margin-left for spacing
         type="submit"
+        disabled={buttonClicked}
         style={{ flexGrow: 1 }}  // Adjust button width
       >
         Angebot als PDF erhalten
       </button>
     </div>
+
+    {showMessage && <p>Wir haben Ihnen soeben ein Angebot zugeschickt</p>}
   </div>
 </form>
 

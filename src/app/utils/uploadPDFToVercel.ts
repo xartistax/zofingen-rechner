@@ -8,12 +8,21 @@ import { pdfsDirectory } from './calculations';
 
 export const uploadPDFToVercel = async (uuid: string, email: string): Promise<string | undefined> => {
     try {
-        const pdfFilePath: string = join(pdfsDirectory, `${uuid}.pdf`);
 
+
+        const pdfFilePath: string = `${pdfsDirectory}/${uuid}.pdf`;
+
+       
+       
         console.log('pdfsDirectory:', pdfsDirectory);
-        console.log('filePath:', pdfFilePath);
 
-        console.log('Uploading PDF:', pdfFilePath); // Log the PDF file path
+console.log('filePath:', pdfFilePath);
+
+
+     
+
+
+
  
         // Read the PDF file data
         const pdfFileData: Buffer = fs.readFileSync(pdfFilePath);

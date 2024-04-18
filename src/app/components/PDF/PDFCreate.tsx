@@ -19,8 +19,9 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
         const pdfFilePath = `${pdfsDirectory}/${uuid}.pdf`;
         await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
 
-
-        uploadPDFToVercel(pdfFilePath, uuid);
+        
+    
+        
  
 
 
