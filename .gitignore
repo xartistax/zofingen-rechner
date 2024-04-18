@@ -35,4 +35,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/public/pdfs/
+# Ignore all files in /public/pdfs/ directory
+/public/pdfs/*
+
+# Except allow tracking of the /public/pdfs/ directory itself
+!/public/pdfs/
