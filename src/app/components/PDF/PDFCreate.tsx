@@ -18,12 +18,17 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
         const pdfFilePath = path.resolve(pdfsDirectory, `${uuid}.pdf`);
 
         // Ensure that the directory exists, create it if it doesn't
-        //const pdfDirectoryPath = path.dirname(pdfFilePath);
+        const pdfDirectoryPath = path.dirname(pdfFilePath);
 
-        
+        // Resolve the directory path
+        const resolvedPdfDirectoryPath = path.resolve(pdfDirectoryPath);
+
+        if (!fs.existsSync(resolvedPdfDirectoryPath)) {
+            fs.mkdirSync(resolvedPdfDirectoryPath, { recursive: true });
+        }
 
         // Proceed with rendering the PDF
-        await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
+       //await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
 
     } catch (error) {
         console.error('Error rendering or uploading PDF:', error);
