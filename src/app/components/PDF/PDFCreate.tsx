@@ -28,6 +28,8 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
 
        console.log("done!")
 
+       return
+
     } catch (error) {
         console.error('Error rendering or uploading PDF:', error);
     } 
