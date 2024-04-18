@@ -40,3 +40,4 @@ next-env.d.ts
 # Except allow tracking of the /public/pdfs/ directory itself
 !/public/pdfs/
 
+/build
