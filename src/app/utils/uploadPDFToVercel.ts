@@ -17,34 +17,12 @@ export const uploadPDFToVercel = async (uuid: string, email: string): Promise<st
 
     try {
         // Construct the absolute path to the PDF file
-        const pdfFilePath: string = path.resolve(pdfsDirectory, `${uuid}.pdf`);
         
-   
-
-
-
-
-
        
 
+        console.error('ok!!!');
 
-       
-        console.log('pdfsDirectory:', pdfsDirectory);
-        console.log('filePath:', pdfFilePath);
 
-        // Read the PDF file data
-        const pdfFileData: Buffer = fs.readFileSync(pdfFilePath);
-        console.log('PDF file read successfully.');
-
-        // Upload the PDF to Vercel
-        const { url } = await put(`${uuid}.pdf`, pdfFileData, { access: 'public', contentType: 'application/pdf' });
-        console.log('PDF uploaded successfully:', url);
-
-        // Add new subscriber
-        addNewSubscriber(email, uuid, url);
-        console.log('Subscriber added successfully.');
-
-        return url; // Return the URL
     } catch (error) {
         console.error('Error uploading PDF:', error);
         return undefined; // Return undefined in case of error

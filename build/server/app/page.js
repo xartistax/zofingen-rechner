@@ -89,83 +89,6 @@ module.exports = require("next/dist/compiled/next-server/app-page.runtime.dev.js
 
 /***/ }),
 
-/***/ "assert":
-/*!*************************!*\
-  !*** external "assert" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("assert");
-
-/***/ }),
-
-/***/ "async_hooks":
-/*!******************************!*\
-  !*** external "async_hooks" ***!
-  \******************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("async_hooks");
-
-/***/ }),
-
-/***/ "buffer":
-/*!*************************!*\
-  !*** external "buffer" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("buffer");
-
-/***/ }),
-
-/***/ "console":
-/*!**************************!*\
-  !*** external "console" ***!
-  \**************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("console");
-
-/***/ }),
-
-/***/ "crypto":
-/*!*************************!*\
-  !*** external "crypto" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("crypto");
-
-/***/ }),
-
-/***/ "diagnostics_channel":
-/*!**************************************!*\
-  !*** external "diagnostics_channel" ***!
-  \**************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("diagnostics_channel");
-
-/***/ }),
-
-/***/ "events":
-/*!*************************!*\
-  !*** external "events" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("events");
-
-/***/ }),
-
 /***/ "fs":
 /*!*********************!*\
   !*** external "fs" ***!
@@ -174,94 +97,6 @@ module.exports = require("events");
 
 "use strict";
 module.exports = require("fs");
-
-/***/ }),
-
-/***/ "http":
-/*!***********************!*\
-  !*** external "http" ***!
-  \***********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("http");
-
-/***/ }),
-
-/***/ "http2":
-/*!************************!*\
-  !*** external "http2" ***!
-  \************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("http2");
-
-/***/ }),
-
-/***/ "https":
-/*!************************!*\
-  !*** external "https" ***!
-  \************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("https");
-
-/***/ }),
-
-/***/ "net":
-/*!**********************!*\
-  !*** external "net" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("net");
-
-/***/ }),
-
-/***/ "node:events":
-/*!******************************!*\
-  !*** external "node:events" ***!
-  \******************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:events");
-
-/***/ }),
-
-/***/ "node:stream":
-/*!******************************!*\
-  !*** external "node:stream" ***!
-  \******************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:stream");
-
-/***/ }),
-
-/***/ "node:util":
-/*!****************************!*\
-  !*** external "node:util" ***!
-  \****************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:util");
-
-/***/ }),
-
-/***/ "os":
-/*!*********************!*\
-  !*** external "os" ***!
-  \*********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("os");
 
 /***/ }),
 
@@ -276,83 +111,6 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ "perf_hooks":
-/*!*****************************!*\
-  !*** external "perf_hooks" ***!
-  \*****************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("perf_hooks");
-
-/***/ }),
-
-/***/ "querystring":
-/*!******************************!*\
-  !*** external "querystring" ***!
-  \******************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("querystring");
-
-/***/ }),
-
-/***/ "stream":
-/*!*************************!*\
-  !*** external "stream" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("stream");
-
-/***/ }),
-
-/***/ "stream/web":
-/*!*****************************!*\
-  !*** external "stream/web" ***!
-  \*****************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("stream/web");
-
-/***/ }),
-
-/***/ "string_decoder":
-/*!*********************************!*\
-  !*** external "string_decoder" ***!
-  \*********************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("string_decoder");
-
-/***/ }),
-
-/***/ "tls":
-/*!**********************!*\
-  !*** external "tls" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("tls");
-
-/***/ }),
-
-/***/ "tty":
-/*!**********************!*\
-  !*** external "tty" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("tty");
-
-/***/ }),
-
 /***/ "url":
 /*!**********************!*\
   !*** external "url" ***!
@@ -361,50 +119,6 @@ module.exports = require("tty");
 
 "use strict";
 module.exports = require("url");
-
-/***/ }),
-
-/***/ "util":
-/*!***********************!*\
-  !*** external "util" ***!
-  \***********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("util");
-
-/***/ }),
-
-/***/ "util/types":
-/*!*****************************!*\
-  !*** external "util/types" ***!
-  \*****************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("util/types");
-
-/***/ }),
-
-/***/ "worker_threads":
-/*!*********************************!*\
-  !*** external "worker_threads" ***!
-  \*********************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("worker_threads");
-
-/***/ }),
-
-/***/ "zlib":
-/*!***********************!*\
-  !*** external "zlib" ***!
-  \***********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("zlib");
 
 /***/ }),
 
@@ -618,23 +332,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "(action-browser)/__barrel_optimize__?names=format!=!./node_modules/date-fns/index.mjs":
-/*!****************************************************************************!*\
-  !*** __barrel_optimize__?names=format!=!./node_modules/date-fns/index.mjs ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   format: () => (/* reexport safe */ _Users_demianfuglistaler_Projects_zofingen_treuhand_rechner_node_modules_date_fns_format_mjs__WEBPACK_IMPORTED_MODULE_0__.format)
-/* harmony export */ });
-/* harmony import */ var _Users_demianfuglistaler_Projects_zofingen_treuhand_rechner_node_modules_date_fns_format_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/date-fns/format.mjs */ "(action-browser)/./node_modules/date-fns/format.mjs");
-
-
-
-/***/ }),
-
 /***/ "(action-browser)/./src/app/components/PDF/PDFCreate.tsx":
 /*!**********************************************!*\
   !*** ./src/app/components/PDF/PDFCreate.tsx ***!
@@ -686,17 +383,6 @@ const __default__ = proxy.default;
 
 /***/ }),
 
-/***/ "(action-browser)/./src/app/utils/addNewSubscriber.ts":
-/*!*******************************************!*\
-  !*** ./src/app/utils/addNewSubscriber.ts ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addNewSubscriber: () => (/* binding */ addNewSubscriber)\n/* harmony export */ });\n/* harmony import */ var private_next_rsc_server_reference__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! private-next-rsc-server-reference */ \"(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js\");\n/* harmony import */ var private_next_rsc_action_encryption__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! private-next-rsc-action-encryption */ \"(action-browser)/./node_modules/next/dist/server/app-render/action-encryption.js\");\n/* harmony import */ var private_next_rsc_action_encryption__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(private_next_rsc_action_encryption__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _mailerlite_mailerlite_nodejs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mailerlite/mailerlite-nodejs */ \"(action-browser)/./node_modules/@mailerlite/mailerlite-nodejs/dist/index.mjs\");\n/* harmony import */ var _barrel_optimize_names_format_date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! __barrel_optimize__?names=format!=!date-fns */ \"(action-browser)/__barrel_optimize__?names=format!=!./node_modules/date-fns/index.mjs\");\n/* harmony import */ var private_next_rsc_action_validate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! private-next-rsc-action-validate */ \"(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js\");\n/* __next_internal_action_entry_do_not_use__ {\"e027de108ee5af6e7eb54263483ab45533464f6c\":\"addNewSubscriber\"} */ \n\n\n\nasync function addNewSubscriber(email, generatedUuid, url) {\n    const currentDateTime = (0,_barrel_optimize_names_format_date_fns__WEBPACK_IMPORTED_MODULE_3__.format)(new Date(), \"yyyy-MM-dd HH:mm:ss\");\n    const mailerliteKey = \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiYTU4YmYwMTA0MDZlMTUyOTIzOWU5N2QwMjlhMmRlMTI1OWIyNzQ4ZTBmZmEwYTdkMDUzNWMwN2NiMzNmOTdkYmYyOGZmZWJjZjhjZGUzMzEiLCJpYXQiOjE3MTI4NTA2NjAuODI5MTE1LCJuYmYiOjE3MTI4NTA2NjAuODI5MTE4LCJleHAiOjQ4Njg1MjQyNjAuODI1NDk0LCJzdWIiOiI3MDEwMzEiLCJzY29wZXMiOltdfQ.K7D0g7-rFVUa8hPskfykCjoDBQTXb0QhwGZDT0bmeX4uN9U5enyZKizPBNuMX5lhVLewsjFxzLssunhkYkuVg-nVpZZTK0Xt6PPs8TTnEbKak2r7G5MmQP5pWS78xj17l5GupWSvJxMH6mjigB5Sni7-1_9_wXkjKphC1bnPC0twog-2cqTDKpzDo4ApqA0PH3SMXkU6AqcbB3hC3etTCHx3UBapAFCDG6Y-5_jCwEEon3GOARwGwCci4d5ZzD_uwDLcy6TPW97SaP9inVNk_zn3Crl_EhS-Ah7HTPj__Y2mKk8M5XgPQe49p4Dlpu58_pufxZY_ADTFB6MdevDN_E2HL6P5c3t7ce4KKdD8pXRIm3N4Pm3xSpDhtw3JAuRH4aSuvzoDdc_nmjWx_I7efLr4athf5f_JBU8C0IBF-NvEnlJLrd7TZZ7gfoUv1tg8X_uic_4TtubFJ9FNbTDT3UgChx3VhNnAFmS8cScXOPN4DTbFctmFdPX7jZ_cJJhhndT9yDXEfROUN74SNn6-ZFO4Zdi91r3lwQfdsrfU9Z67yvQ4h1WUUNF8701zunZ3EEqGROQvEZMpuUZL6b5LYccVG6tzUwG39_DCsHHI5HjugwiUjtaEYWEP7aSQrJMR4WcNv2TMnqBa7r70ao66WJmiObmsv7yGQN-xumlAbwQ\" || 0;\n    const mailerlite = new _mailerlite_mailerlite_nodejs__WEBPACK_IMPORTED_MODULE_2__[\"default\"]({\n        api_key: mailerliteKey\n    });\n    const params = {\n        email: email,\n        fields: {\n            uuid: generatedUuid,\n            pdf_offerte: url\n        },\n        groups: [\n            \"118335752483374916\"\n        ],\n        subscribed_at: currentDateTime\n    };\n    if (!mailerliteKey || mailerliteKey === \"\") {\n        throw new Error(\"NEXT_PUBLIC_MAILERLITE_KEY is not defined\");\n    }\n    try {\n        await mailerlite.subscribers.createOrUpdate(params);\n        console.log(\"Subscriber added successfully\");\n    } catch (error) {\n        console.error(\"Error adding subscriber:\", error);\n        throw error; // Rethrow the error for the caller to handle\n    }\n}\n\n(0,private_next_rsc_action_validate__WEBPACK_IMPORTED_MODULE_4__.ensureServerEntryExports)([\n    addNewSubscriber\n]);\n(0,private_next_rsc_server_reference__WEBPACK_IMPORTED_MODULE_0__.registerServerReference)(\"e027de108ee5af6e7eb54263483ab45533464f6c\", addNewSubscriber);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFjdGlvbi1icm93c2VyKS8uL3NyYy9hcHAvdXRpbHMvYWRkTmV3U3Vic2NyaWJlci50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFDdUQ7QUFDckI7QUFHM0IsZUFBZUUsaUJBQWlCQyxLQUFhLEVBQUVDLGFBQXFCLEVBQUVDLEdBQVc7SUFHcEYsTUFBTUMsa0JBQWtCTCw4RUFBTUEsQ0FBQyxJQUFJTSxRQUFRO0lBQzNDLE1BQU1DLGdCQUFnQkMsNjlCQUFzQyxJQUFJLENBQUU7SUFDbEUsTUFBTUcsYUFBYSxJQUFJWixxRUFBVUEsQ0FBQztRQUFFYSxTQUFTTDtJQUFjO0lBQzNELE1BQU1NLFNBQVM7UUFDWFgsT0FBT0E7UUFDUFksUUFBUTtZQUFFQyxNQUFNWjtZQUFnQmEsYUFBYVo7UUFBSTtRQUNqRGEsUUFBUTtZQUFDO1NBQXFCO1FBQzlCQyxlQUFlYjtJQUNuQjtJQUVBLElBQUksQ0FBQ0UsaUJBQWlCQSxrQkFBa0IsSUFBSTtRQUN4QyxNQUFNLElBQUlZLE1BQU07SUFDcEI7SUFFQSxJQUFJO1FBQ0EsTUFBTVIsV0FBV1MsV0FBVyxDQUFDQyxjQUFjLENBQUNSO1FBQzVDUyxRQUFRQyxHQUFHLENBQUM7SUFDaEIsRUFBRSxPQUFPQyxPQUFPO1FBQ1pGLFFBQVFFLEtBQUssQ0FBQyw0QkFBNEJBO1FBQzFDLE1BQU1BLE9BQU8sNkNBQTZDO0lBQzlEO0FBQ0oiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly96b2Zpbmdlbi10cmV1aGFuZC1yZWNobmVyLy4vc3JjL2FwcC91dGlscy9hZGROZXdTdWJzY3JpYmVyLnRzP2QyMDMiXSwic291cmNlc0NvbnRlbnQiOlsiXCJ1c2Ugc2VydmVyXCJcbmltcG9ydCBNYWlsZXJMaXRlIGZyb20gXCJAbWFpbGVybGl0ZS9tYWlsZXJsaXRlLW5vZGVqc1wiO1xuaW1wb3J0IHsgZm9ybWF0IH0gZnJvbSBcImRhdGUtZm5zXCI7XG5pbXBvcnQgeyBnZXRGaWxlQnlVVUlEIH0gZnJvbSBcIi4vdXBsb2FkUERGVG9WZXJjZWxcIjtcblxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGFkZE5ld1N1YnNjcmliZXIoZW1haWw6IHN0cmluZywgZ2VuZXJhdGVkVXVpZDogc3RyaW5nLCB1cmw6IHN0cmluZyk6IFByb21pc2U8dm9pZD4ge1xuXG4gICAgXG4gICAgY29uc3QgY3VycmVudERhdGVUaW1lID0gZm9ybWF0KG5ldyBEYXRlKCksICd5eXl5LU1NLWRkIEhIOm1tOnNzJyk7XG4gICAgY29uc3QgbWFpbGVybGl0ZUtleSA9IHByb2Nlc3MuZW52Lk5FWFRfUFVCTElDX01BSUxFUkxJVEVfS0VZIHx8IFwiXCI7XG4gICAgY29uc3QgbWFpbGVybGl0ZSA9IG5ldyBNYWlsZXJMaXRlKHsgYXBpX2tleTogbWFpbGVybGl0ZUtleSB9KTtcbiAgICBjb25zdCBwYXJhbXMgPSB7XG4gICAgICAgIGVtYWlsOiBlbWFpbCxcbiAgICAgICAgZmllbGRzOiB7IHV1aWQ6IGdlbmVyYXRlZFV1aWQsICBwZGZfb2ZmZXJ0ZTogdXJsIH0sXG4gICAgICAgIGdyb3VwczogW1wiMTE4MzM1NzUyNDgzMzc0OTE2XCJdLFxuICAgICAgICBzdWJzY3JpYmVkX2F0OiBjdXJyZW50RGF0ZVRpbWUsXG4gICAgfTtcblxuICAgIGlmICghbWFpbGVybGl0ZUtleSB8fCBtYWlsZXJsaXRlS2V5ID09PSBcIlwiKSB7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcignTkVYVF9QVUJMSUNfTUFJTEVSTElURV9LRVkgaXMgbm90IGRlZmluZWQnKTtcbiAgICB9XG5cbiAgICB0cnkge1xuICAgICAgICBhd2FpdCBtYWlsZXJsaXRlLnN1YnNjcmliZXJzLmNyZWF0ZU9yVXBkYXRlKHBhcmFtcyk7XG4gICAgICAgIGNvbnNvbGUubG9nKCdTdWJzY3JpYmVyIGFkZGVkIHN1Y2Nlc3NmdWxseScpO1xuICAgIH0gY2F0Y2ggKGVycm9yKSB7XG4gICAgICAgIGNvbnNvbGUuZXJyb3IoJ0Vycm9yIGFkZGluZyBzdWJzY3JpYmVyOicsIGVycm9yKTtcbiAgICAgICAgdGhyb3cgZXJyb3I7IC8vIFJldGhyb3cgdGhlIGVycm9yIGZvciB0aGUgY2FsbGVyIHRvIGhhbmRsZVxuICAgIH1cbn0iXSwibmFtZXMiOlsiTWFpbGVyTGl0ZSIsImZvcm1hdCIsImFkZE5ld1N1YnNjcmliZXIiLCJlbWFpbCIsImdlbmVyYXRlZFV1aWQiLCJ1cmwiLCJjdXJyZW50RGF0ZVRpbWUiLCJEYXRlIiwibWFpbGVybGl0ZUtleSIsInByb2Nlc3MiLCJlbnYiLCJORVhUX1BVQkxJQ19NQUlMRVJMSVRFX0tFWSIsIm1haWxlcmxpdGUiLCJhcGlfa2V5IiwicGFyYW1zIiwiZmllbGRzIiwidXVpZCIsInBkZl9vZmZlcnRlIiwiZ3JvdXBzIiwic3Vic2NyaWJlZF9hdCIsIkVycm9yIiwic3Vic2NyaWJlcnMiLCJjcmVhdGVPclVwZGF0ZSIsImNvbnNvbGUiLCJsb2ciLCJlcnJvciJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(action-browser)/./src/app/utils/addNewSubscriber.ts\n");
-
-/***/ }),
-
 /***/ "(action-browser)/./src/app/utils/calculations.ts":
 /*!***************************************!*\
   !*** ./src/app/utils/calculations.ts ***!
@@ -715,7 +401,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   $$ACTION_0: () => (/* binding */ $$ACTION_0),\n/* harmony export */   getFileByUUID: () => (/* binding */ getFileByUUID),\n/* harmony export */   uploadPDFToVercel: () => (/* binding */ uploadPDFToVercel)\n/* harmony export */ });\n/* harmony import */ var private_next_rsc_server_reference__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! private-next-rsc-server-reference */ \"(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js\");\n/* harmony import */ var private_next_rsc_action_encryption__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! private-next-rsc-action-encryption */ \"(action-browser)/./node_modules/next/dist/server/app-render/action-encryption.js\");\n/* harmony import */ var private_next_rsc_action_encryption__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(private_next_rsc_action_encryption__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _vercel_blob__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @vercel/blob */ \"(action-browser)/./node_modules/@vercel/blob/dist/index.js\");\n/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fs */ \"fs\");\n/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(fs__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _addNewSubscriber__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./addNewSubscriber */ \"(action-browser)/./src/app/utils/addNewSubscriber.ts\");\n/* harmony import */ var _calculations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./calculations */ \"(action-browser)/./src/app/utils/calculations.ts\");\n/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! path */ \"path\");\n/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var private_next_rsc_action_validate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! private-next-rsc-action-validate */ \"(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js\");\n/* __next_internal_action_entry_do_not_use__ {\"30d32eba31742e3043b8f40f0a6ab0b4c0aaea9e\":\"$$ACTION_0\",\"75c0fcc460835be02436a7ce35b51a1b712692f9\":\"uploadPDFToVercel\",\"a8ee398ad7d32c529aff6a030d4f343c82596989\":\"getFileByUUID\"} */ \n\n\n\n\n\n // Import path module\nconst uploadPDFToVercel = (0,private_next_rsc_server_reference__WEBPACK_IMPORTED_MODULE_0__.registerServerReference)(\"30d32eba31742e3043b8f40f0a6ab0b4c0aaea9e\", $$ACTION_0);\nasync function $$ACTION_0(uuid, email) {\n    try {\n        // Construct the absolute path to the PDF file\n        const pdfFilePath = path__WEBPACK_IMPORTED_MODULE_5___default().resolve(_calculations__WEBPACK_IMPORTED_MODULE_4__.pdfsDirectory, `${uuid}.pdf`);\n        console.log(\"pdfsDirectory:\", _calculations__WEBPACK_IMPORTED_MODULE_4__.pdfsDirectory);\n        console.log(\"filePath:\", pdfFilePath);\n        // Read the PDF file data\n        const pdfFileData = fs__WEBPACK_IMPORTED_MODULE_2___default().readFileSync(pdfFilePath);\n        console.log(\"PDF file read successfully.\");\n        // Upload the PDF to Vercel\n        const { url } = await (0,_vercel_blob__WEBPACK_IMPORTED_MODULE_6__.put)(`${uuid}.pdf`, pdfFileData, {\n            access: \"public\",\n            contentType: \"application/pdf\"\n        });\n        console.log(\"PDF uploaded successfully:\", url);\n        // Add new subscriber\n        (0,_addNewSubscriber__WEBPACK_IMPORTED_MODULE_3__.addNewSubscriber)(email, uuid, url);\n        console.log(\"Subscriber added successfully.\");\n        return url; // Return the URL\n    } catch (error) {\n        console.error(\"Error uploading PDF:\", error);\n        return undefined; // Return undefined in case of error\n    }\n}\nasync function getFileByUUID(uuid) {\n    const filePath = path__WEBPACK_IMPORTED_MODULE_5___default().resolve(_calculations__WEBPACK_IMPORTED_MODULE_4__.pdfsDirectory, `${uuid}.pdf`); // Construct absolute file path\n    console.log(\"Fetching file by UUID:\", filePath); // Log the file path\n    try {\n        const fileData = fs__WEBPACK_IMPORTED_MODULE_2___default().readFileSync(filePath); // Read file data\n        console.log(\"File read successfully.\");\n        return fileData;\n    } catch (error) {\n        console.error(\"Error reading file:\", error);\n        return null; // Return null if file does not exist or cannot be read\n    }\n}\n\n(0,private_next_rsc_action_validate__WEBPACK_IMPORTED_MODULE_7__.ensureServerEntryExports)([\n    uploadPDFToVercel,\n    getFileByUUID\n]);\n(0,private_next_rsc_server_reference__WEBPACK_IMPORTED_MODULE_0__.registerServerReference)(\"75c0fcc460835be02436a7ce35b51a1b712692f9\", uploadPDFToVercel);\n(0,private_next_rsc_server_reference__WEBPACK_IMPORTED_MODULE_0__.registerServerReference)(\"a8ee398ad7d32c529aff6a030d4f343c82596989\", getFileByUUID);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFjdGlvbi1icm93c2VyKS8uL3NyYy9hcHAvdXRpbHMvdXBsb2FkUERGVG9WZXJjZWwudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUVtQztBQUNmO0FBQ2tDO0FBQ1A7QUFDdkIsQ0FBQyxxQkFBcUI7QUFJdkMsTUFBTUssb0JBQW9CQSwwRkFBQUEseURBeUMvQjswQkF6Q3NDQyxNQUFjQztJQU9sRCxJQUFJO1FBQ0EsOENBQThDO1FBQzlDLE1BQU1DLGNBQXNCSixtREFBWSxDQUFDRCx3REFBYUEsRUFBRSxDQUFDLEVBQUVHLEtBQUssSUFBSSxDQUFDO1FBWXJFSSxRQUFRQyxHQUFHLENBQUMsa0JBQWtCUix3REFBYUE7UUFDM0NPLFFBQVFDLEdBQUcsQ0FBQyxhQUFhSDtRQUV6Qix5QkFBeUI7UUFDekIsTUFBTUksY0FBc0JYLHNEQUFlLENBQUNPO1FBQzVDRSxRQUFRQyxHQUFHLENBQUM7UUFFWiwyQkFBMkI7UUFDM0IsTUFBTSxFQUFFRyxHQUFHLEVBQUUsR0FBRyxNQUFNZCxpREFBR0EsQ0FBQyxDQUFDLEVBQUVNLEtBQUssSUFBSSxDQUFDLEVBQUVNLGFBQWE7WUFBRUcsUUFBUTtZQUFVQyxhQUFhO1FBQWtCO1FBQ3pHTixRQUFRQyxHQUFHLENBQUMsOEJBQThCRztRQUUxQyxxQkFBcUI7UUFDckJaLG1FQUFnQkEsQ0FBQ0ssT0FBT0QsTUFBTVE7UUFDOUJKLFFBQVFDLEdBQUcsQ0FBQztRQUVaLE9BQU9HLEtBQUssaUJBQWlCO0lBQ2pDLEVBQUUsT0FBT0csT0FBTztRQUNaUCxRQUFRTyxLQUFLLENBQUMsd0JBQXdCQTtRQUN0QyxPQUFPQyxXQUFXLG9DQUFvQztJQUMxRDtBQUNKO0FBRU8sZUFBZUMsY0FBY2IsSUFBWTtJQUM1QyxNQUFNYyxXQUFXaEIsbURBQVksQ0FBQ0Qsd0RBQWFBLEVBQUUsQ0FBQyxFQUFFRyxLQUFLLElBQUksQ0FBQyxHQUFHLCtCQUErQjtJQUM1RkksUUFBUUMsR0FBRyxDQUFDLDBCQUEwQlMsV0FBVyxvQkFBb0I7SUFFckUsSUFBSTtRQUNBLE1BQU1DLFdBQVdwQixzREFBZSxDQUFDbUIsV0FBVyxpQkFBaUI7UUFDN0RWLFFBQVFDLEdBQUcsQ0FBQztRQUVaLE9BQU9VO0lBQ1gsRUFBRSxPQUFPSixPQUFPO1FBQ1pQLFFBQVFPLEtBQUssQ0FBQyx1QkFBdUJBO1FBQ3JDLE9BQU8sTUFBTSx1REFBdUQ7SUFDeEU7QUFDSiIsInNvdXJjZXMiOlsid2VicGFjazovL3pvZmluZ2VuLXRyZXVoYW5kLXJlY2huZXIvLi9zcmMvYXBwL3V0aWxzL3VwbG9hZFBERlRvVmVyY2VsLnRzP2FhMGEiXSwic291cmNlc0NvbnRlbnQiOlsiXCJ1c2Ugc2VydmVyXCJcbmltcG9ydCB7IGpvaW4gfSBmcm9tICdwYXRoJztcbmltcG9ydCB7IHB1dCB9IGZyb20gXCJAdmVyY2VsL2Jsb2JcIjtcbmltcG9ydCBmcyBmcm9tICdmcyc7XG5pbXBvcnQgeyBhZGROZXdTdWJzY3JpYmVyIH0gZnJvbSAnLi9hZGROZXdTdWJzY3JpYmVyJztcbmltcG9ydCB7IHBkZnNEaXJlY3RvcnkgfSBmcm9tICcuL2NhbGN1bGF0aW9ucyc7XG5pbXBvcnQgcGF0aCBmcm9tICdwYXRoJzsgLy8gSW1wb3J0IHBhdGggbW9kdWxlXG5cblxuXG5leHBvcnQgY29uc3QgdXBsb2FkUERGVG9WZXJjZWwgPSBhc3luYyAodXVpZDogc3RyaW5nLCBlbWFpbDogc3RyaW5nKTogUHJvbWlzZTxzdHJpbmcgfCB1bmRlZmluZWQ+ID0+IHtcblxuXG5cbiAgICBcbiAgICBcblxuICAgIHRyeSB7XG4gICAgICAgIC8vIENvbnN0cnVjdCB0aGUgYWJzb2x1dGUgcGF0aCB0byB0aGUgUERGIGZpbGVcbiAgICAgICAgY29uc3QgcGRmRmlsZVBhdGg6IHN0cmluZyA9IHBhdGgucmVzb2x2ZShwZGZzRGlyZWN0b3J5LCBgJHt1dWlkfS5wZGZgKTtcbiAgICAgICAgXG4gICBcblxuXG5cblxuXG4gICAgICAgXG5cblxuICAgICAgIFxuICAgICAgICBjb25zb2xlLmxvZygncGRmc0RpcmVjdG9yeTonLCBwZGZzRGlyZWN0b3J5KTtcbiAgICAgICAgY29uc29sZS5sb2coJ2ZpbGVQYXRoOicsIHBkZkZpbGVQYXRoKTtcblxuICAgICAgICAvLyBSZWFkIHRoZSBQREYgZmlsZSBkYXRhXG4gICAgICAgIGNvbnN0IHBkZkZpbGVEYXRhOiBCdWZmZXIgPSBmcy5yZWFkRmlsZVN5bmMocGRmRmlsZVBhdGgpO1xuICAgICAgICBjb25zb2xlLmxvZygnUERGIGZpbGUgcmVhZCBzdWNjZXNzZnVsbHkuJyk7XG5cbiAgICAgICAgLy8gVXBsb2FkIHRoZSBQREYgdG8gVmVyY2VsXG4gICAgICAgIGNvbnN0IHsgdXJsIH0gPSBhd2FpdCBwdXQoYCR7dXVpZH0ucGRmYCwgcGRmRmlsZURhdGEsIHsgYWNjZXNzOiAncHVibGljJywgY29udGVudFR5cGU6ICdhcHBsaWNhdGlvbi9wZGYnIH0pO1xuICAgICAgICBjb25zb2xlLmxvZygnUERGIHVwbG9hZGVkIHN1Y2Nlc3NmdWxseTonLCB1cmwpO1xuXG4gICAgICAgIC8vIEFkZCBuZXcgc3Vic2NyaWJlclxuICAgICAgICBhZGROZXdTdWJzY3JpYmVyKGVtYWlsLCB1dWlkLCB1cmwpO1xuICAgICAgICBjb25zb2xlLmxvZygnU3Vic2NyaWJlciBhZGRlZCBzdWNjZXNzZnVsbHkuJyk7XG5cbiAgICAgICAgcmV0dXJuIHVybDsgLy8gUmV0dXJuIHRoZSBVUkxcbiAgICB9IGNhdGNoIChlcnJvcikge1xuICAgICAgICBjb25zb2xlLmVycm9yKCdFcnJvciB1cGxvYWRpbmcgUERGOicsIGVycm9yKTtcbiAgICAgICAgcmV0dXJuIHVuZGVmaW5lZDsgLy8gUmV0dXJuIHVuZGVmaW5lZCBpbiBjYXNlIG9mIGVycm9yXG4gICAgfVxufTtcblxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGdldEZpbGVCeVVVSUQodXVpZDogc3RyaW5nKSB7XG4gICAgY29uc3QgZmlsZVBhdGggPSBwYXRoLnJlc29sdmUocGRmc0RpcmVjdG9yeSwgYCR7dXVpZH0ucGRmYCk7IC8vIENvbnN0cnVjdCBhYnNvbHV0ZSBmaWxlIHBhdGhcbiAgICBjb25zb2xlLmxvZygnRmV0Y2hpbmcgZmlsZSBieSBVVUlEOicsIGZpbGVQYXRoKTsgLy8gTG9nIHRoZSBmaWxlIHBhdGhcblxuICAgIHRyeSB7XG4gICAgICAgIGNvbnN0IGZpbGVEYXRhID0gZnMucmVhZEZpbGVTeW5jKGZpbGVQYXRoKTsgLy8gUmVhZCBmaWxlIGRhdGFcbiAgICAgICAgY29uc29sZS5sb2coJ0ZpbGUgcmVhZCBzdWNjZXNzZnVsbHkuJyk7XG5cbiAgICAgICAgcmV0dXJuIGZpbGVEYXRhO1xuICAgIH0gY2F0Y2ggKGVycm9yKSB7XG4gICAgICAgIGNvbnNvbGUuZXJyb3IoJ0Vycm9yIHJlYWRpbmcgZmlsZTonLCBlcnJvcik7XG4gICAgICAgIHJldHVybiBudWxsOyAvLyBSZXR1cm4gbnVsbCBpZiBmaWxlIGRvZXMgbm90IGV4aXN0IG9yIGNhbm5vdCBiZSByZWFkXG4gICAgfVxufVxuXG4iXSwibmFtZXMiOlsicHV0IiwiZnMiLCJhZGROZXdTdWJzY3JpYmVyIiwicGRmc0RpcmVjdG9yeSIsInBhdGgiLCJ1cGxvYWRQREZUb1ZlcmNlbCIsInV1aWQiLCJlbWFpbCIsInBkZkZpbGVQYXRoIiwicmVzb2x2ZSIsImNvbnNvbGUiLCJsb2ciLCJwZGZGaWxlRGF0YSIsInJlYWRGaWxlU3luYyIsInVybCIsImFjY2VzcyIsImNvbnRlbnRUeXBlIiwiZXJyb3IiLCJ1bmRlZmluZWQiLCJnZXRGaWxlQnlVVUlEIiwiZmlsZVBhdGgiLCJmaWxlRGF0YSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(action-browser)/./src/app/utils/uploadPDFToVercel.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   $$ACTION_0: () => (/* binding */ $$ACTION_0),\n/* harmony export */   getFileByUUID: () => (/* binding */ getFileByUUID),\n/* harmony export */   uploadPDFToVercel: () => (/* binding */ uploadPDFToVercel)\n/* harmony export */ });\n/* harmony import */ var private_next_rsc_server_reference__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! private-next-rsc-server-reference */ \"(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js\");\n/* harmony import */ var private_next_rsc_action_encryption__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! private-next-rsc-action-encryption */ \"(action-browser)/./node_modules/next/dist/server/app-render/action-encryption.js\");\n/* harmony import */ var private_next_rsc_action_encryption__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(private_next_rsc_action_encryption__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fs */ \"fs\");\n/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(fs__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _calculations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./calculations */ \"(action-browser)/./src/app/utils/calculations.ts\");\n/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! path */ \"path\");\n/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var private_next_rsc_action_validate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! private-next-rsc-action-validate */ \"(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js\");\n/* __next_internal_action_entry_do_not_use__ {\"30d32eba31742e3043b8f40f0a6ab0b4c0aaea9e\":\"$$ACTION_0\",\"75c0fcc460835be02436a7ce35b51a1b712692f9\":\"uploadPDFToVercel\",\"a8ee398ad7d32c529aff6a030d4f343c82596989\":\"getFileByUUID\"} */ \n\n\n\n // Import path module\nconst uploadPDFToVercel = (0,private_next_rsc_server_reference__WEBPACK_IMPORTED_MODULE_0__.registerServerReference)(\"30d32eba31742e3043b8f40f0a6ab0b4c0aaea9e\", $$ACTION_0);\nasync function $$ACTION_0(uuid, email) {\n    try {\n        // Construct the absolute path to the PDF file\n        console.error(\"ok!!!\");\n    } catch (error) {\n        console.error(\"Error uploading PDF:\", error);\n        return undefined; // Return undefined in case of error\n    }\n}\nasync function getFileByUUID(uuid) {\n    const filePath = path__WEBPACK_IMPORTED_MODULE_4___default().resolve(_calculations__WEBPACK_IMPORTED_MODULE_3__.pdfsDirectory, `${uuid}.pdf`); // Construct absolute file path\n    console.log(\"Fetching file by UUID:\", filePath); // Log the file path\n    try {\n        const fileData = fs__WEBPACK_IMPORTED_MODULE_2___default().readFileSync(filePath); // Read file data\n        console.log(\"File read successfully.\");\n        return fileData;\n    } catch (error) {\n        console.error(\"Error reading file:\", error);\n        return null; // Return null if file does not exist or cannot be read\n    }\n}\n\n(0,private_next_rsc_action_validate__WEBPACK_IMPORTED_MODULE_5__.ensureServerEntryExports)([\n    uploadPDFToVercel,\n    getFileByUUID\n]);\n(0,private_next_rsc_server_reference__WEBPACK_IMPORTED_MODULE_0__.registerServerReference)(\"75c0fcc460835be02436a7ce35b51a1b712692f9\", uploadPDFToVercel);\n(0,private_next_rsc_server_reference__WEBPACK_IMPORTED_MODULE_0__.registerServerReference)(\"a8ee398ad7d32c529aff6a030d4f343c82596989\", getFileByUUID);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFjdGlvbi1icm93c2VyKS8uL3NyYy9hcHAvdXRpbHMvdXBsb2FkUERGVG9WZXJjZWwudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFHb0I7QUFFMkI7QUFDdkIsQ0FBQyxxQkFBcUI7QUFJdkMsTUFBTUcsb0JBQW9CQSwwRkFBQUEseURBbUIvQjswQkFuQnNDQyxNQUFjQztJQU9sRCxJQUFJO1FBQ0EsOENBQThDO1FBSTlDQyxRQUFRQyxLQUFLLENBQUM7SUFHbEIsRUFBRSxPQUFPQSxPQUFPO1FBQ1pELFFBQVFDLEtBQUssQ0FBQyx3QkFBd0JBO1FBQ3RDLE9BQU9DLFdBQVcsb0NBQW9DO0lBQzFEO0FBQ0o7QUFFTyxlQUFlQyxjQUFjTCxJQUFZO0lBQzVDLE1BQU1NLFdBQVdSLG1EQUFZLENBQUNELHdEQUFhQSxFQUFFLENBQUMsRUFBRUcsS0FBSyxJQUFJLENBQUMsR0FBRywrQkFBK0I7SUFDNUZFLFFBQVFNLEdBQUcsQ0FBQywwQkFBMEJGLFdBQVcsb0JBQW9CO0lBRXJFLElBQUk7UUFDQSxNQUFNRyxXQUFXYixzREFBZSxDQUFDVSxXQUFXLGlCQUFpQjtRQUM3REosUUFBUU0sR0FBRyxDQUFDO1FBRVosT0FBT0M7SUFDWCxFQUFFLE9BQU9OLE9BQU87UUFDWkQsUUFBUUMsS0FBSyxDQUFDLHVCQUF1QkE7UUFDckMsT0FBTyxNQUFNLHVEQUF1RDtJQUN4RTtBQUNKIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vem9maW5nZW4tdHJldWhhbmQtcmVjaG5lci8uL3NyYy9hcHAvdXRpbHMvdXBsb2FkUERGVG9WZXJjZWwudHM/YWEwYSJdLCJzb3VyY2VzQ29udGVudCI6WyJcInVzZSBzZXJ2ZXJcIlxuaW1wb3J0IHsgam9pbiB9IGZyb20gJ3BhdGgnO1xuaW1wb3J0IHsgcHV0IH0gZnJvbSBcIkB2ZXJjZWwvYmxvYlwiO1xuaW1wb3J0IGZzIGZyb20gJ2ZzJztcbmltcG9ydCB7IGFkZE5ld1N1YnNjcmliZXIgfSBmcm9tICcuL2FkZE5ld1N1YnNjcmliZXInO1xuaW1wb3J0IHsgcGRmc0RpcmVjdG9yeSB9IGZyb20gJy4vY2FsY3VsYXRpb25zJztcbmltcG9ydCBwYXRoIGZyb20gJ3BhdGgnOyAvLyBJbXBvcnQgcGF0aCBtb2R1bGVcblxuXG5cbmV4cG9ydCBjb25zdCB1cGxvYWRQREZUb1ZlcmNlbCA9IGFzeW5jICh1dWlkOiBzdHJpbmcsIGVtYWlsOiBzdHJpbmcpOiBQcm9taXNlPHN0cmluZyB8IHVuZGVmaW5lZD4gPT4ge1xuXG5cblxuICAgIFxuICAgIFxuXG4gICAgdHJ5IHtcbiAgICAgICAgLy8gQ29uc3RydWN0IHRoZSBhYnNvbHV0ZSBwYXRoIHRvIHRoZSBQREYgZmlsZVxuICAgICAgICBcbiAgICAgICBcblxuICAgICAgICBjb25zb2xlLmVycm9yKCdvayEhIScpO1xuXG5cbiAgICB9IGNhdGNoIChlcnJvcikge1xuICAgICAgICBjb25zb2xlLmVycm9yKCdFcnJvciB1cGxvYWRpbmcgUERGOicsIGVycm9yKTtcbiAgICAgICAgcmV0dXJuIHVuZGVmaW5lZDsgLy8gUmV0dXJuIHVuZGVmaW5lZCBpbiBjYXNlIG9mIGVycm9yXG4gICAgfVxufTtcblxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGdldEZpbGVCeVVVSUQodXVpZDogc3RyaW5nKSB7XG4gICAgY29uc3QgZmlsZVBhdGggPSBwYXRoLnJlc29sdmUocGRmc0RpcmVjdG9yeSwgYCR7dXVpZH0ucGRmYCk7IC8vIENvbnN0cnVjdCBhYnNvbHV0ZSBmaWxlIHBhdGhcbiAgICBjb25zb2xlLmxvZygnRmV0Y2hpbmcgZmlsZSBieSBVVUlEOicsIGZpbGVQYXRoKTsgLy8gTG9nIHRoZSBmaWxlIHBhdGhcblxuICAgIHRyeSB7XG4gICAgICAgIGNvbnN0IGZpbGVEYXRhID0gZnMucmVhZEZpbGVTeW5jKGZpbGVQYXRoKTsgLy8gUmVhZCBmaWxlIGRhdGFcbiAgICAgICAgY29uc29sZS5sb2coJ0ZpbGUgcmVhZCBzdWNjZXNzZnVsbHkuJyk7XG5cbiAgICAgICAgcmV0dXJuIGZpbGVEYXRhO1xuICAgIH0gY2F0Y2ggKGVycm9yKSB7XG4gICAgICAgIGNvbnNvbGUuZXJyb3IoJ0Vycm9yIHJlYWRpbmcgZmlsZTonLCBlcnJvcik7XG4gICAgICAgIHJldHVybiBudWxsOyAvLyBSZXR1cm4gbnVsbCBpZiBmaWxlIGRvZXMgbm90IGV4aXN0IG9yIGNhbm5vdCBiZSByZWFkXG4gICAgfVxufVxuXG4iXSwibmFtZXMiOlsiZnMiLCJwZGZzRGlyZWN0b3J5IiwicGF0aCIsInVwbG9hZFBERlRvVmVyY2VsIiwidXVpZCIsImVtYWlsIiwiY29uc29sZSIsImVycm9yIiwidW5kZWZpbmVkIiwiZ2V0RmlsZUJ5VVVJRCIsImZpbGVQYXRoIiwicmVzb2x2ZSIsImxvZyIsImZpbGVEYXRhIiwicmVhZEZpbGVTeW5jIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(action-browser)/./src/app/utils/uploadPDFToVercel.ts\n");
 
 /***/ }),
 
@@ -737,7 +423,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/undici","vendor-chunks/axios","vendor-chunks/date-fns","vendor-chunks/@fastify","vendor-chunks/asynckit","vendor-chunks/@swc","vendor-chunks/debug","vendor-chunks/retry","vendor-chunks/survey-core","vendor-chunks/@vercel","vendor-chunks/mime-db","vendor-chunks/form-data","vendor-chunks/follow-redirects","vendor-chunks/@mailerlite","vendor-chunks/supports-color","vendor-chunks/proxy-from-env","vendor-chunks/ms","vendor-chunks/mime-types","vendor-chunks/is-buffer","vendor-chunks/has-flag","vendor-chunks/delayed-stream","vendor-chunks/combined-stream","vendor-chunks/bytes","vendor-chunks/async-retry","vendor-chunks/survey-react-ui","vendor-chunks/react-uuid"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fpage&page=%2Fpage&appPaths=%2Fpage&pagePath=private-next-app-dir%2Fpage.tsx&appDir=%2FUsers%2Fdemianfuglistaler%2FProjects%2Fzofingen-treuhand-rechner%2Fsrc%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2FUsers%2Fdemianfuglistaler%2FProjects%2Fzofingen-treuhand-rechner&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=standalone&preferredRegion=&middlewareConfig=e30%3D!")));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/@swc","vendor-chunks/survey-core","vendor-chunks/survey-react-ui","vendor-chunks/react-uuid"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fpage&page=%2Fpage&appPaths=%2Fpage&pagePath=private-next-app-dir%2Fpage.tsx&appDir=%2FUsers%2Fdemianfuglistaler%2FProjects%2Fzofingen-treuhand-rechner%2Fsrc%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2FUsers%2Fdemianfuglistaler%2FProjects%2Fzofingen-treuhand-rechner&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=standalone&preferredRegion=&middlewareConfig=e30%3D!")));
 module.exports = __webpack_exports__;
 
 })();
