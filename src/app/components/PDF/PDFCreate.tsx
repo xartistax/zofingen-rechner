@@ -18,10 +18,7 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
         const resolvedPdfDirectoryPath = path.resolve(pdfsDirectory);
         const pdfFilePath = path.resolve(pdfsDirectory, `${uuid}.pdf`);
 
-        if (!fs.existsSync(resolvedPdfDirectoryPath)) {
-                fs.mkdirSync(resolvedPdfDirectoryPath, { recursive: true });
-            }
-
+        
     
 
         await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
