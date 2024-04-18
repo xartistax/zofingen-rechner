@@ -36,7 +36,7 @@ yarn-error.log*
 next-env.d.ts
 
 # Ignore all files in /public/pdfs/ directory
-/public/pdfs/*
+/public/pdfs/*.pdf
 
 # Except allow tracking of the /public/pdfs/ directory itself
 !/public/pdfs/
