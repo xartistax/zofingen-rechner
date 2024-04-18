@@ -9,20 +9,29 @@ import path from 'path'; // Import path module
 
 
 export const uploadPDFToVercel = async (uuid: string, email: string): Promise<string | undefined> => {
+
+
+
+    console.log("dr: " + pdfsDirectory)
+    
+
     try {
         // Construct the absolute path to the PDF file
         const pdfFilePath: string = path.resolve(pdfsDirectory, `${uuid}.pdf`);
+        
+   
 
 
 
 
 // Check if the directory exists, create it if it doesn't
-if (!fs.existsSync(pdfsDirectory)) {
-    //fs.mkdirSync(pdfsDirectory, { recursive: true });
-    console.log("directory doesnt exists: " + pdfsDirectory)
+const resolvedPdfsDirectory = path.resolve(pdfsDirectory);
+if (!fs.existsSync(resolvedPdfsDirectory)) {
+    console.log("Directory doesn't exist: " + resolvedPdfsDirectory);
 } else {
-    console.log("directory does exist" + pdfsDirectory)
+    console.log("Directory does exist: " + resolvedPdfsDirectory);
 }
+
 
        
 

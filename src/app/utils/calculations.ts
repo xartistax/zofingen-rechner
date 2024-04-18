@@ -1,4 +1,4 @@
-import path from "path";
+import path, { join } from "path";
 
 export class Calculator {
 
@@ -50,4 +50,5 @@ export class Calculator {
 
 
 
-export const pdfsDirectory: string = path.join(__dirname, '..', 'public', 'pdfs');
+
+export const pdfsDirectory: string = path.join(process.cwd(), 'public', 'pdfs');
