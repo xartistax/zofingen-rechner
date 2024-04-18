@@ -28,7 +28,8 @@ export interface DebugValues {
 export default function SurveyComponent() {
 
 
-  const generatedUuid: string = String(uuid()) ;
+
+  const [generatedUuid] = useState(String(uuid()));
 
 
 
