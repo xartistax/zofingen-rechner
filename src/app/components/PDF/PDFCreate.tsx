@@ -15,13 +15,13 @@ import path from 'path'; // Import path module
 export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues) => {
     try {
 
-        const resolvedPdfDirectoryPath = path.resolve(pdfsDirectory);
-        const pdfFilePath = path.resolve(pdfsDirectory, `${uuid}.pdf`);
+        //const resolvedPdfDirectoryPath = path.resolve(pdfsDirectory);
+        //const pdfFilePath = path.resolve(pdfsDirectory, `${uuid}.pdf`);
 
         
     
 
-        await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
+       // await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
 
 
 
