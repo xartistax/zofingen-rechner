@@ -1,29 +1,19 @@
 "use server"
 import { join } from 'path';
-
 import { put } from "@vercel/blob";
 import fs from 'fs';
 import { addNewSubscriber } from './addNewSubscriber';
 import { pdfsDirectory } from './calculations';
+import path from 'path'; // Import path module
 
 export const uploadPDFToVercel = async (uuid: string, email: string): Promise<string | undefined> => {
     try {
-
-
-        const pdfFilePath: string = `${pdfsDirectory}/${uuid}.pdf`;
-
-       
+        // Construct the absolute path to the PDF file
+        const pdfFilePath: string = path.resolve(pdfsDirectory, `${uuid}.pdf`);
        
         console.log('pdfsDirectory:', pdfsDirectory);
+        console.log('filePath:', pdfFilePath);
 
-console.log('filePath:', pdfFilePath);
-
-
-     
-
-
-
- 
         // Read the PDF file data
         const pdfFileData: Buffer = fs.readFileSync(pdfFilePath);
         console.log('PDF file read successfully.');
@@ -44,7 +34,7 @@ console.log('filePath:', pdfFilePath);
 };
 
 export async function getFileByUUID(uuid: string) {
-    const filePath = join(pdfsDirectory, `${uuid}.pdf`); // Construct file path
+    const filePath = path.resolve(pdfsDirectory, `${uuid}.pdf`); // Construct absolute file path
     console.log('Fetching file by UUID:', filePath); // Log the file path
 
     try {
@@ -57,3 +47,4 @@ export async function getFileByUUID(uuid: string) {
         return null; // Return null if file does not exist or cannot be read
     }
 }
+

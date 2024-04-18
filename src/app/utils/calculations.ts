@@ -1,3 +1,4 @@
+import path from "path";
 
 export class Calculator {
 
@@ -48,4 +49,4 @@ export class Calculator {
 }
 
 
-export const pdfsDirectory: string = './public/pdfs';
+export const pdfsDirectory: string = path.resolve('./public/pdfs');

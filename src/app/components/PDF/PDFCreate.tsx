@@ -10,7 +10,7 @@ import path from 'path'; // Import path module
 export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues) => {
     try {
         // Construct the absolute path to the PDF file
-        const pdfFilePath = path.join(pdfsDirectory, `${uuid}.pdf`);
+        const pdfFilePath = path.resolve(pdfsDirectory, `${uuid}.pdf`);
 
         // Ensure that the directory exists, create it if it doesn't
         const pdfDirectoryPath = path.dirname(pdfFilePath);
@@ -21,7 +21,7 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
         // Proceed with rendering the PDF
         await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
 
-        // Upload the PDF to Vercel if necessary
+       
        
     } catch (error) {
         console.error('Error rendering or uploading PDF:', error);
@@ -29,3 +29,4 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
 };
 
 export default PDFCreator;
+
