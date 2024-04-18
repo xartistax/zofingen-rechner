@@ -5,22 +5,36 @@ import ReactPDF from '@react-pdf/renderer';
 import PDFFile from './PDFFile';
 import { DebugValues } from '../Survey/SurveyComponent';
 import fs from 'fs';
+import { put } from '@vercel/blob';
+import { uploadPDFToVercel } from '@/app/utils/uploadPDFToVercel';
+import { pdfsDirectory } from '@/app/utils/calculations';
 
-const PDFCreate = async (createPDF: boolean, uuid: string, debugValues: DebugValues) => {
+export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues) => {
     try {
         // Check if the directory exists, create it if it doesn't
-        const pdfsDirectory = './public/pdfs';
         if (!fs.existsSync(pdfsDirectory)) {
             fs.mkdirSync(pdfsDirectory, { recursive: true });
         }
 
-        // Render the PDF and write it to the directory
-        await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, `${pdfsDirectory}/${uuid}.pdf`);
+        const pdfFilePath = `${pdfsDirectory}/${uuid}.pdf`;
+        await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
+
+
+        uploadPDFToVercel(pdfFilePath, uuid);
+ 
+
+
     } catch (error) {
-        throw new Error('Error creating PDF: ' + error);
-    }
+        console.error('Error uploading PDF:', error);
+    } 
 };
 
-export default PDFCreate;
+export default PDFCreator;
+
+
+
+
+
+
 
 

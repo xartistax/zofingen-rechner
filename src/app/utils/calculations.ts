@@ -46,3 +46,6 @@ export class Calculator {
         }
     }
 }
+
+
+export const pdfsDirectory: string = './public/pdfs';

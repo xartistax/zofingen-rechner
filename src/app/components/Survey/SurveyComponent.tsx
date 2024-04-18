@@ -9,9 +9,10 @@ import 'survey-core/defaultV2.min.css';
 import { AppProvider, useAppContext } from '../../utils/AppContext';
 import PDFComponent from '../PDF/PDFComponent';
 import uuid from 'react-uuid';
-import {  handleSubmitAndCreatePDF } from '@/app/utils/submitForm';
+import {   handleSubmitAndCreatePDF } from '@/app/utils/submitForm';
 // @ts-ignore
 import { DefaultLightPanelless } from "survey-core/themes/default-light-panelless";
+import { handleFormSubmitAsync } from '@/app/utils/handleFormSubmitAsync';
 
 
 export interface DebugValues {
@@ -50,7 +51,16 @@ export default function SurveyComponent() {
   survey.applyTheme(DefaultLightPanelless);
 
 
-  const handleFormSubmit = handleSubmitAndCreatePDF(email, generatedUuid, setCreatePDF)
+
+
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+
+    await handleFormSubmitAsync(debugValues, email, generatedUuid, createPDF, setCreatePDF);
+
+};
 
 
 
@@ -114,6 +124,10 @@ export default function SurveyComponent() {
     }
   }, [showSurveyResult, monthlyCost]);
 
+
+
+
+  
   
 
   return (
@@ -147,7 +161,7 @@ export default function SurveyComponent() {
           </p>
         
           {/* Email input field and submit button */}
-          <form className='mt-5' onSubmit={handleFormSubmit}>
+          <form className='mt-5'  onSubmit={handleFormSubmit}>
   <div className="mb-4">
     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
       Ihre E-Mail-Adresse

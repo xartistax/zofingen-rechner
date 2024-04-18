@@ -27,8 +27,9 @@ interface PDFComponentProps {
         if (createPDF) {
             console.log(debugValues)
             setIsCreatingPDF(true);
+
             PDFCreate(createPDF, uuid, debugValues).then(() => {
-                setIsCreatingPDF(false); // Update the indicator when PDF creation is completed
+                setIsCreatingPDF(false); 
             });
         }
     }, [createPDF, debugValues, uuid]);

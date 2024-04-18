@@ -1,42 +1,47 @@
+
+
 import MailerLite from '@mailerlite/mailerlite-nodejs';
+import ReactPDF from '@react-pdf/renderer';
 import { format } from 'date-fns';
 
+import PDFFile from '../components/PDF/PDFFile';
+import PDFCreator from '../components/PDF/PDFCreate';
+import { DebugValues } from '../components/Survey/SurveyComponent';
+import { put } from '@vercel/blob';
+import uuid from 'react-uuid';
+import { addNewSubscriber } from './addNewSubscriber';
+import { getFileByUUID, uploadPDFToVercel } from './uploadPDFToVercel';
 
 
 
-export function handleSubmitAndCreatePDF(email: string, generatedUuid: string, setCreatePDF: React.Dispatch<React.SetStateAction<boolean>>): (e: React.FormEvent<HTMLFormElement>) => void {
+export async function handleSubmitAndCreatePDF(debugValues: DebugValues, email: string, generatedUuid: string, createPDF: boolean, setCreatePDF: React.Dispatch<React.SetStateAction<boolean>>): Promise<void> {
+    try {
 
-  const mailerliteKey = process.env.NEXT_PUBLIC_MAILERLITE_KEY;
-  if (!mailerliteKey) {
-      throw new Error('NEXT_PUBLIC_MAILERLITE_KEY is not defined');
-  }
 
-  const currentDateTime = format(new Date(), 'yyyy-MM-dd HH:mm:ss');
 
-  const mailerlite = new MailerLite({
-      api_key: mailerliteKey 
-  });
+        await PDFCreator(createPDF, generatedUuid, debugValues);
+        await uploadPDFToVercel(generatedUuid, email);
+        
 
-  const params = {
-      email: email,
-      fields: { 
-          uuid: generatedUuid,
-      },
-      groups: ["118335752483374916"],
-      subscribed_at: currentDateTime,
-  };
 
-  const handleSubmission = function (e: React.FormEvent<HTMLFormElement>): void {
-      e.preventDefault();
-      mailerlite.subscribers.createOrUpdate(params)
-          .then(response => {
-              console.log(response.data);
-              setCreatePDF(true); // Set createPDF to true after successful submission
-          })
-          .catch(error => {
-              if (error.response) console.log(error.response.data);
-          });
-  };
 
-  return handleSubmission;
+       
+
+        
+        
+        
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
+
+
+
+
+
+function delay(ms: number) {
+
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+

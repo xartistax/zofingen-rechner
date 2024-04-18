@@ -12,6 +12,7 @@
     "@mailerlite/mailerlite-nodejs": "^1.2.1",
     "@react-pdf/renderer": "^3.4.2",
     "@types/node-fetch": "^2.6.11",
+    "@vercel/blob": "^0.23.1",
     "body-parser": "^1.20.2",
     "date-fns": "^3.6.0",
     "jspdf": "^2.5.1",
