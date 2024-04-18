@@ -49,4 +49,5 @@ export class Calculator {
 }
 
 
-export const pdfsDirectory: string = path.resolve('./public/pdfs');
+
+export const pdfsDirectory: string = path.join(__dirname, '..', 'public', 'pdfs');
