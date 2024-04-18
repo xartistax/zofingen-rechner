@@ -11,10 +11,7 @@ import { pdfsDirectory } from '@/app/utils/calculations';
 
 export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues) => {
     try {
-        // Check if the directory exists, create it if it doesn't
-        if (!fs.existsSync(pdfsDirectory)) {
-            fs.mkdirSync(pdfsDirectory, { recursive: true });
-        }
+      
 
         const pdfFilePath = `${pdfsDirectory}/${uuid}.pdf`;
         await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
