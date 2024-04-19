@@ -21,6 +21,10 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
         // Ensure that the directory structure exists
         fs.mkdirSync(pdfDirectoryPath, { recursive: true });
 
+        if (!fs.existsSync('/var/task/public/pdfs')) {
+            fs.mkdirSync('/var/task/public/pdfs', { recursive: true });
+        }
+
         // Proceed with rendering the PDF
         const pdfFilePath = path.join(pdfDirectoryPath, `${uuid}.pdf`);
 
