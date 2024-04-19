@@ -19,9 +19,11 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
 
         const dir= resolve(process.cwd(), '/tmp', uuid);
 
-        const made = mkdirp.sync(dir)
-        console.log(`made directories, starting with ${made}`)
+        mkdirp(dir).then(made =>
+            console.log(`made directorie: ${dir}`)
+          )
 
+       
     } catch (error) {
         console.error('Error creating directory:', error);
       
