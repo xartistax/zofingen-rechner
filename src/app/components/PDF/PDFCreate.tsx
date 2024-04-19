@@ -18,7 +18,15 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
 
         const dir = path.join(process.cwd(), 'tmp', uuid);
         
-        fs.mkdirSync(dir, { recursive: true });
+
+
+        fs.mkdir(path.resolve(dir), { recursive: true }, e => {
+            if (e) {
+                console.error(e);
+            } else {
+                console.log('Success');
+            }
+        })
         
 
         return Promise.resolve("Directory created successfully.");
