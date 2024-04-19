@@ -23,6 +23,6 @@ export const uploadPDFToVercel = async (uuid: string, email: string): Promise<st
         return url;
     } catch (error) {
         console.error('Error uploading PDF to Vercel:', error);
-        return null;
+        return null; 
     }
 };

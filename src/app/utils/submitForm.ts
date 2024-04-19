@@ -23,7 +23,15 @@ export async function handleSubmitAndCreatePDF(debugValues: DebugValues, email: 
         const success = await PDFCreator(createPDF, generatedUuid, debugValues);
         if (success) {
             console.log('PDF successfully created.');
-            await uploadPDFToVercel(generatedUuid, email)
+            const url = await uploadPDFToVercel(generatedUuid, email);
+
+            if (url) {
+                console.log('PDF uploaded to Vercel:', url);
+                await addNewSubscriber(email, generatedUuid, url);
+                console.log('Subscriber added successfully.');
+            } else {
+                console.error('Error uploading PDF to Vercel: URL is null.');
+            }
         } else {
             console.error('PDF creation failed.');
         }
