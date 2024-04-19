@@ -9,8 +9,11 @@ export async function addNewSubscriber(email: string, generatedUuid: string, url
     const mailerliteKey = process.env.NEXT_PUBLIC_MAILERLITE_KEY || "";
 
     if (!mailerliteKey) {
+        console.log('NEXT_PUBLIC_MAILERLITE_KEY is not defined');
         throw new Error('NEXT_PUBLIC_MAILERLITE_KEY is not defined');
     }
+
+    console.log('Key is here');
 
     const mailerlite = new MailerLite({ api_key: mailerliteKey });
     const params = {
