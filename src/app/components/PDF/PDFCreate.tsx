@@ -18,14 +18,14 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
     try {
 
         const dir= resolve(process.cwd(), '/tmp', uuid);
-
-        mkdirp(dir).then(made =>
-            console.log(`made directorie: ${dir}`)
-          )
+        mkdirp(dir).then(async made =>  await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, `${dir}/${uuid}.pdf`) )
+        console.log('PDF successfully created:', `${dir}/${uuid}.pdf`);
+        return true 
 
        
     } catch (error) {
-        console.error('Error creating directory:', error);
+        console.error('Error rendering or saving PDF:', error);
+        return false
       
     } 
 };
