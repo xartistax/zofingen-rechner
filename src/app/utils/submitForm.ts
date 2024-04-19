@@ -1,4 +1,4 @@
-
+"use client"
 
 
 import MailerLite from '@mailerlite/mailerlite-nodejs';

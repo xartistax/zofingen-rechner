@@ -2,12 +2,16 @@
 import MailerLite from "@mailerlite/mailerlite-nodejs";
 import { format } from "date-fns";
 
-
 export async function addNewSubscriber(email: string, generatedUuid: string, url: string): Promise<void> {
-
-    const groups = ["118335752483374916"]
+    console.log('START ADD SUBSCRIBER');
+    const groups = ["118335752483374916"];
     const currentDateTime = format(new Date(), 'yyyy-MM-dd HH:mm:ss');
     const mailerliteKey = process.env.NEXT_PUBLIC_MAILERLITE_KEY || "";
+
+    if (!mailerliteKey) {
+        throw new Error('NEXT_PUBLIC_MAILERLITE_KEY is not defined');
+    }
+
     const mailerlite = new MailerLite({ api_key: mailerliteKey });
     const params = {
         email: email,
@@ -15,10 +19,6 @@ export async function addNewSubscriber(email: string, generatedUuid: string, url
         groups: groups,
         subscribed_at: currentDateTime,
     };
-
-    if (!mailerliteKey || mailerliteKey === "") {
-        throw new Error('NEXT_PUBLIC_MAILERLITE_KEY is not defined');
-    }
 
     try {
         await mailerlite.subscribers.createOrUpdate(params);
