@@ -4,7 +4,7 @@
 const nextConfig = {
   swcMinify: false,
   nftTracing: true ,
-  output: 'standalone',
+  output: 'standalone', 
     experimental: {
       serverComponentsExternalPackages: ['@react-pdf/renderer'],
     },
