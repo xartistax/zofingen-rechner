@@ -1,18 +1,18 @@
 "use server"
 import MailerLite from "@mailerlite/mailerlite-nodejs";
 import { format } from "date-fns";
-import { getFileByUUID } from "./uploadPDFToVercel";
+
 
 export async function addNewSubscriber(email: string, generatedUuid: string, url: string): Promise<void> {
 
-    
+    const groups = ["118335752483374916"]
     const currentDateTime = format(new Date(), 'yyyy-MM-dd HH:mm:ss');
     const mailerliteKey = process.env.NEXT_PUBLIC_MAILERLITE_KEY || "";
     const mailerlite = new MailerLite({ api_key: mailerliteKey });
     const params = {
         email: email,
         fields: { uuid: generatedUuid,  pdf_offerte: url },
-        groups: ["118335752483374916"],
+        groups: groups,
         subscribed_at: currentDateTime,
     };
 
@@ -28,3 +28,6 @@ export async function addNewSubscriber(email: string, generatedUuid: string, url
         throw error; // Rethrow the error for the caller to handle
     }
 }
+
+
+

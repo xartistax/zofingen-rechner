@@ -10,36 +10,33 @@ import { DebugValues } from '../components/Survey/SurveyComponent';
 import { put } from '@vercel/blob';
 import uuid from 'react-uuid';
 import { addNewSubscriber } from './addNewSubscriber';
-import { getFileByUUID, uploadPDFToVercel } from './uploadPDFToVercel';
+import {  uploadPDFToVercel } from './uploadPDFToVercel';
 
 
 
 export async function handleSubmitAndCreatePDF(debugValues: DebugValues, email: string, generatedUuid: string, createPDF: boolean, setCreatePDF: React.Dispatch<React.SetStateAction<boolean>>): Promise<void> {
     try {
+        setCreatePDF(true);
+        console.log(createPDF);
 
-
-
-        setCreatePDF(true)
-        console.log(createPDF)
-
-        
         await PDFCreator(createPDF, generatedUuid, debugValues);
-        //await uploadPDFToVercel(generatedUuid, email);
-
-        setCreatePDF(false)
-        console.log(createPDF)
-
-
-
-       
-
+        const url = await uploadPDFToVercel(generatedUuid, email);
         
-        
+        if (url !== null) {
+            await addNewSubscriber(email, generatedUuid, url);
+            console.log('Subscriber added successfully.');
+        } else {
+            console.error('Error uploading PDF to Vercel: URL is null.');
+        }
+
+        setCreatePDF(false);
+        console.log(createPDF);
         
     } catch (error) {
         console.error('Error:', error);
     }
 }
+
 
 
 

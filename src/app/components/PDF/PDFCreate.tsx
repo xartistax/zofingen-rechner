@@ -17,7 +17,7 @@ import { mkdirp } from 'mkdirp'
 export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues) => {
     try {
 
-        const dir= resolve(process.cwd(), '/tmp', uuid);
+        const dir = resolve(process.cwd(), '/tmp', uuid);
         mkdirp(dir).then(async made =>  await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, `${dir}/${uuid}.pdf`) )
         console.log('PDF successfully created:', `${dir}/${uuid}.pdf`);
         return true 
