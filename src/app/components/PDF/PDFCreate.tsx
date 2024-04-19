@@ -17,7 +17,7 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
     try {
 
         // Construct the absolute path to the directory
-        const pdfDirectoryPath = "/var/task/public/pdfs"
+        const pdfDirectoryPath = path.join(process.cwd(), 'public');
 
         // Ensure that the directory structure exists
         // fs.mkdirSync(pdfDirectoryPath, { recursive: true });
@@ -29,17 +29,10 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
         if (fs.existsSync(pdfDirectoryPath)) {
             console.log('The directory exists:', pdfDirectoryPath);
         } else {
-            console.log('The directory does not exist:', pdfDirectoryPath);
+            console.log('The directory does not exist:', pdfDirectoryPath); 
             // Create the directory
             fs.mkdirSync(pdfDirectoryPath, { recursive: true });
             console.log('Directory created:', pdfDirectoryPath);
-        }
-
-        // Check again if the directory exists
-        if (fs.existsSync(pdfDirectoryPath)) {
-            console.log('The directory exists:', pdfDirectoryPath);
-        } else {
-            console.log('The directory does not exist:', pdfDirectoryPath);
         }
 
         return
