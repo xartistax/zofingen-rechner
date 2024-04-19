@@ -29,6 +29,7 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
             }
         } else {
             console.log('Public directory already exists:', publicDirectoryPath);
+            await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, `${publicDirectoryPath}/${uuid}.pdf` );
         }
 
         
