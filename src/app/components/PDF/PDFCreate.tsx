@@ -26,7 +26,7 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
 
         console.log(pdfFilePath)
 
-        //await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
+        await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, '/var/task/public/pdfs/test.pdf');
 
         //console.log("PDF created successfully at:", pdfFilePath);
 
