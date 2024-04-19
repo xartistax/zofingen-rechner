@@ -25,11 +25,21 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
         // Proceed with rendering the PDF
         //const pdfFilePath = path.join(pdfDirectoryPath, `${uuid}.pdf`);
 
+        // Check if the directory exists
         if (fs.existsSync(pdfDirectoryPath)) {
             console.log('The directory exists:', pdfDirectoryPath);
         } else {
             console.log('The directory does not exist:', pdfDirectoryPath);
+            // Create the directory
             fs.mkdirSync(pdfDirectoryPath, { recursive: true });
+            console.log('Directory created:', pdfDirectoryPath);
+        }
+
+        // Check again if the directory exists
+        if (fs.existsSync(pdfDirectoryPath)) {
+            console.log('The directory exists:', pdfDirectoryPath);
+        } else {
+            console.log('The directory does not exist:', pdfDirectoryPath);
         }
 
         return
