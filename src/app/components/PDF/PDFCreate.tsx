@@ -16,7 +16,7 @@ import ReactPDF from '@react-pdf/renderer';
 export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues) => {
     try {
 
-        const publicDirectoryPath = path.join(process.cwd(), '/tmp');
+        const publicDirectoryPath = '/var/task';
 
         // Check if the directory exists
         if (!fs.existsSync(publicDirectoryPath)) {
