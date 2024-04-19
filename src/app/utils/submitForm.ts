@@ -1,5 +1,6 @@
 
 
+
 import MailerLite from '@mailerlite/mailerlite-nodejs';
 import ReactPDF from '@react-pdf/renderer';
 import { format } from 'date-fns';
@@ -19,16 +20,14 @@ export async function handleSubmitAndCreatePDF(debugValues: DebugValues, email: 
         setCreatePDF(true);
         console.log(createPDF);
 
-        await PDFCreator(createPDF, generatedUuid, debugValues);
-        const url = await uploadPDFToVercel(generatedUuid, email);
-        
-        if (url !== null) {
-            await addNewSubscriber(email, generatedUuid, url);
-            console.log('Subscriber added successfully.');
+        const success = await PDFCreator(createPDF, generatedUuid, debugValues);
+        if (success) {
+            console.log('PDF successfully created.');
+            await uploadPDFToVercel(generatedUuid, email)
         } else {
-            console.error('Error uploading PDF to Vercel: URL is null.');
+            console.error('PDF creation failed.');
         }
-
+       
         setCreatePDF(false);
         console.log(createPDF);
         

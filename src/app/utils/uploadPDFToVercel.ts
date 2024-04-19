@@ -7,37 +7,22 @@ import { pdfsDirectory } from './calculations';
 import path from 'path'; // Import path module
 
 
-
-export const uploadPDFToVercel = async (uuid: string, email: string) => {
-
+export const uploadPDFToVercel = async (uuid: string, email: string): Promise<string | null> => {
     try {
-
         const pdfFilePath = resolve(process.cwd(), '/tmp', uuid, `${uuid}.pdf`);
-        console.log( pdfFilePath )
-
+        console.log('PDF file path:', pdfFilePath);
 
         // Read the PDF file data
         const pdfFileData: Buffer = fs.readFileSync(pdfFilePath);
         console.log('PDF file read successfully.');
 
-
         // Upload the PDF to Vercel
         const { url } = await put(`${uuid}.pdf`, pdfFileData, { access: 'public', contentType: 'application/pdf' });
         console.log('PDF uploaded successfully:', url);
 
-
-        return url
-
-        
+        return url;
     } catch (error) {
-
-        return null
-        
+        console.error('Error uploading PDF to Vercel:', error);
+        return null;
     }
-
-    
-
-
 };
-
-

@@ -14,19 +14,18 @@ import { mkdirp } from 'mkdirp'
  
 
 
-export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues) => {
+export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues): Promise<boolean> => {
     try {
-
         const dir = resolve(process.cwd(), '/tmp', uuid);
-        mkdirp(dir).then(async made =>  await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, `${dir}/${uuid}.pdf`) )
-        console.log('PDF successfully created:', `${dir}/${uuid}.pdf`);
-        return true 
+        await mkdirp(dir); // Use await instead of .then()
 
+        await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, `${dir}/${uuid}.pdf`);
+        console.log('PDF successfully created:', `${dir}/${uuid}.pdf`);
+        return true;
        
     } catch (error) {
         console.error('Error rendering or saving PDF:', error);
-        return false
-      
+        return false;
     } 
 };
 
