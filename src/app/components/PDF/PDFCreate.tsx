@@ -15,27 +15,16 @@ import ReactPDF from '@react-pdf/renderer';
 
 export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues) => {
     try {
+        const dir = `./tmp/${uuid}`;
 
-        const publicDirectoryPath = '/var/task';
-
-        // Check if the directory exists
-        if (!fs.existsSync(publicDirectoryPath)) {
-            // If it doesn't exist, attempt to create it
-            try {
-                fs.mkdirSync(publicDirectoryPath, { recursive: true });
-                console.log('Public directory created:', publicDirectoryPath);
-            } catch (error) {
-                console.error('Error creating public directory:', error);
-            }
-        } else {
-            console.log('Public directory already exists:', publicDirectoryPath);
-            await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, `${publicDirectoryPath}/${uuid}.pdf` );
+        if (!fs.existsSync(dir)){
+            fs.mkdirSync(dir, { recursive: true });
         }
 
-        
-
+        return Promise.resolve("Directory created successfully.");
     } catch (error) {
-        console.error('Error rendering or uploading PDF:', error);
+        console.error('Error creating directory:', error);
+        return Promise.reject(error);
     } 
 };
 
