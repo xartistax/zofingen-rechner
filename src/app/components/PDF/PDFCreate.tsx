@@ -29,6 +29,7 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
             console.log('The directory exists:', pdfDirectoryPath);
         } else {
             console.log('The directory does not exist:', pdfDirectoryPath);
+            fs.mkdirSync(pdfDirectoryPath, { recursive: true });
         }
 
         return
