@@ -24,7 +24,7 @@ export async function handleSubmitAndCreatePDF(debugValues: DebugValues, email: 
 
         
         await PDFCreator(createPDF, generatedUuid, debugValues);
-        await uploadPDFToVercel(generatedUuid, email);
+        //await uploadPDFToVercel(generatedUuid, email);
 
         setCreatePDF(false)
         console.log(createPDF)

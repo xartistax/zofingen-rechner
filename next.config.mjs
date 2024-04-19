@@ -2,7 +2,7 @@
 
 
 const nextConfig = {
-  distDir: "build",
+  swcMinify: false,
   nftTracing: true ,
   output: 'standalone',
     experimental: {
