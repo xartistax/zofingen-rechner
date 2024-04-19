@@ -23,11 +23,19 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
         // fs.mkdirSync(pdfDirectoryPath, { recursive: true });
 
         // Proceed with rendering the PDF
-        const pdfFilePath = path.join(pdfDirectoryPath, `${uuid}.pdf`);
+        //const pdfFilePath = path.join(pdfDirectoryPath, `${uuid}.pdf`);
 
-        console.log(pdfFilePath)
+        if (fs.existsSync(pdfDirectoryPath)) {
+            console.log('The directory exists:', pdfDirectoryPath);
+        } else {
+            console.log('The directory does not exist:', pdfDirectoryPath);
+        }
 
-        await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
+        return
+
+        
+
+        // await ReactPDF.render(<PDFFile uuid={uuid} debugValues={debugValues} />, pdfFilePath);
 
         //console.log("PDF created successfully at:", pdfFilePath);
 
