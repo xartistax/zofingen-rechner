@@ -17,7 +17,7 @@ export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: 
     try {
 
         // Construct the absolute path to the directory
-        const pdfDirectoryPath = path.resolve(pdfsDirectory);
+        const pdfDirectoryPath = "/var/task/public/pdfs"
 
         // Ensure that the directory structure exists
         // fs.mkdirSync(pdfDirectoryPath, { recursive: true });
