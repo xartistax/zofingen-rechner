@@ -15,23 +15,17 @@ import ReactPDF from '@react-pdf/renderer';
 
 export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues) => {
     try {
-
         const dir = path.join(process.cwd(), 'tmp', uuid);
-        
 
-        
-
-        fs.mkdir(path.resolve(dir), { recursive: true }, e => {
+        fs.mkdir(path.resolve(dir), { recursive: true }, function (e) {
             if (e) {
                 console.error(e);
-                console.log("NO!")
+                console.log("NO!");
             } else {
                 console.log('Success');
             }
-        })
-        
+        });
 
-        
     } catch (error) {
         console.error('Error creating directory:', error);
         return Promise.reject(error); 
