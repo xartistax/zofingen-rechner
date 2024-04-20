@@ -28,20 +28,13 @@ interface PDFComponentProps {
             console.log(debugValues)
             setIsCreatingPDF(true);
 
-            PDFCreate(createPDF, uuid, debugValues).then(() => {
+            PDFCreate( uuid, debugValues).then(() => {
                 setIsCreatingPDF(false); 
             });
         }
     }, [createPDF, debugValues, uuid]);
 
-    return (
-        <div>
-            <button disabled={isCreatingPDF} onClick={() => setCreatePDF(true)}>
-                {isCreatingPDF ? 'Creating PDF...' : null}
-            </button>
-            {isCreatingPDF && <div>PDF is being created...</div>}
-        </div>
-    );
+    return (<></>);
 };
 
-export default PDFComponent;
+export default PDFComponent; 

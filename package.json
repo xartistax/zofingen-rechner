@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@mailerlite/mailerlite-nodejs": "^1.2.1",
+    "@mui/material": "^5.15.15",
     "@react-pdf/renderer": "^3.4.2",
     "@types/node-fetch": "^2.6.11",
     "@vercel/blob": "^0.23.1",
@@ -21,6 +24,7 @@
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-loading-dot": "^1.0.6",
     "react-uuid": "^2.0.0",
     "survey-react-ui": "^1.9.138",
     "uuid": "^9.0.1"

@@ -15,12 +15,11 @@ import {  uploadPDFToVercel } from './uploadPDFToVercel';
 
 
 
-export async function handleSubmitAndCreatePDF(debugValues: DebugValues, email: string, generatedUuid: string, createPDF: boolean, setCreatePDF: React.Dispatch<React.SetStateAction<boolean>>): Promise<void> {
+export async function handleSubmitAndCreatePDF(debugValues: DebugValues, email: string, generatedUuid: string): Promise<void> {
     try {
-        setCreatePDF(true);
-        console.log(createPDF);
+      
 
-        const success = await PDFCreator(createPDF, generatedUuid, debugValues);
+        const success = await PDFCreator( generatedUuid, debugValues);
         if (success) {
             console.log('PDF successfully created.');
             const url = await uploadPDFToVercel(generatedUuid, email);
@@ -36,8 +35,7 @@ export async function handleSubmitAndCreatePDF(debugValues: DebugValues, email: 
             console.error('PDF creation failed.');
         }
        
-        setCreatePDF(false);
-        console.log(createPDF);
+       
         
     } catch (error) {
         console.error('Error:', error);
@@ -48,10 +46,5 @@ export async function handleSubmitAndCreatePDF(debugValues: DebugValues, email: 
 
 
 
-
-function delay(ms: number) {
-
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 

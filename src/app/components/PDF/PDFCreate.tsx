@@ -14,7 +14,7 @@ import { mkdirp } from 'mkdirp'
  
 
 
-export const PDFCreator = async (createPDF: boolean, uuid: string, debugValues: DebugValues): Promise<boolean> => {
+export const PDFCreator = async (uuid: string, debugValues: DebugValues): Promise<boolean> => {
     try {
         const dir = resolve(process.cwd(), '/tmp', uuid);
         await mkdirp(dir); // Use await instead of .then()

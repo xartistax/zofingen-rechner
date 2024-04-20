@@ -13,7 +13,10 @@ import {   handleSubmitAndCreatePDF } from '@/app/utils/submitForm';
 // @ts-ignore
 import { DefaultLightPanelless } from "survey-core/themes/default-light-panelless";
 import { handleFormSubmitAsync } from '@/app/utils/handleFormSubmitAsync';
-
+import PDFCreate from '../PDF/PDFCreate';
+import LinearProgress from '@mui/material/LinearProgress';
+import { Loading } from 'react-loading-dot'
+import { Box } from '@mui/material';
 
 export interface DebugValues {
   rechnungen_1: number;
@@ -36,7 +39,12 @@ export default function SurveyComponent() {
 
 
 
-
+  const validateEmail = (email: string) => {
+    // Regular expression for email validation
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+  
   const [ createPDF, setCreatePDF ] = useState(false);
   const [ email, setEmail ] = useState("");
   
@@ -45,10 +53,13 @@ export default function SurveyComponent() {
   const { monthlyCost, setMonthlyCost } = useAppContext();
   const { showSurvey, setShowSurvey } = useAppContext();
   const { debugValues, setDebugValues } = useAppContext();
+  const [ loading , setLoading ] = useState(false)
   const [showMessage, setShowMessage] = useState(false);
+  const [ statusMessage, setStatusMessage ] = useState("")
   const [buttonClicked, setButtonClicked] = useState(false);
   const survey = new Model(surveyJson);
   survey.applyTheme(DefaultLightPanelless);
+  const isValidEmail = validateEmail(email);
 
 
 
@@ -56,11 +67,26 @@ export default function SurveyComponent() {
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true)
+    
 
-    setButtonClicked(true); 
-    await handleFormSubmitAsync(debugValues, email, generatedUuid, createPDF, setCreatePDF);
+    
+  
+    if (isValidEmail) {
+      
+      setButtonClicked(true); 
+      await handleFormSubmitAsync(debugValues, email, generatedUuid, setShowMessage, setStatusMessage);
+      
+    } else {
+      setShowMessage(true)
+      setStatusMessage("Bitte geben Sie eine gèltige Email Adresse an")
+    }
 
-};
+
+    setLoading(false)
+
+}; 
+
 
 
 
@@ -127,20 +153,6 @@ export default function SurveyComponent() {
 
 
 
-  useEffect(() => {
-    if (createPDF) {
-      // Set showMessage to true when createPDF becomes true
-      setShowMessage(true);
-  
-      // After 5 seconds, toggle showMessage back to false
-      const timeoutId = setTimeout(() => {
-        setShowMessage(false);
-      }, 5000);
-  
-      // Clear the timeout if the component unmounts or if showMessage becomes false before the timeout completes
-      return () => clearTimeout(timeoutId);
-    }
-  }, [createPDF]);
 
   
   
@@ -156,18 +168,18 @@ export default function SurveyComponent() {
         )}
 
         {showSurveyResult && (
-          <div id="surveyResult" className="show p-12">
+          <div id="surveyResult" className="show p-12 sd-body sd-body--static">
           <p style={{ fontSize: "24px", lineHeight: "1.5", fontWeight: "900" }}>
-            Gemäss Ihren Angaben kostet Sie unser Service:
+            Gemäss Ihren Angaben kostet Sie unser Service: <br />
           
               <span className="totalValueBox">
-                <span className="currencyIndicator">CHF </span>
+                <span className="currencyIndicator"> CHF </span>
                 <span id="totalValue">{monthlyCost}</span> / Monat
               </span>
               <span className="currencyText"> exkl. MwSt</span>
     
         
-            <a id="create_pdf" onClick={() => setCreatePDF(true)}>PDF anfordern</a> 
+            
             
           </p>
         
@@ -178,30 +190,69 @@ export default function SurveyComponent() {
           {/* Email input field and submit button */}
           <form className='mt-5'  onSubmit={handleFormSubmit}>
   <div className="mb-4">
-    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-      Ihre E-Mail-Adresse
-    </label>
-    <div className="flex items-center"> {/* Flex container for input and button */}
+   
+
+
+
+
+    <div className="sd-question__header sd-element__header sd-question__header--location-top sd-element__header--location-top">
+      <h5 className="sd-title sd-element__title sd-question__title sd-question__title--required" id="sq_176_ariaTitle">
+        <span data-key="q_num" className="sd-element__num" aria-hidden="true">1.</span>
+        <span data-key="num-sp">&nbsp;</span>
+        <span className="sv-string-viewer sv-string-viewer--multiline">Ihre E-Mail-Adresse*</span>
+        <span data-key="req-sp">&nbsp;</span><span data-key="req-text" className="sd-question__required-text" aria-hidden="true">*</span>
+      </h5>
+      </div>
+
+
+
+
+      <div className="flex flex-col"> {/* Flex container for email field and loading/status message */}
+  <div className="flex items-center justify-between"> {/* Flex container for input and button */}
+    <div className="sd-text__content sd-question__content" role="presentation" style={{ width: "calc(60% - 25px)" }}> {/* Adjusted width */}
       <input 
         value={email} 
         onChange={(e) => setEmail(e.target.value)} 
         type="email" 
-        className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+        className="sd-input sd-text " 
         id="email" 
         placeholder="Ihre E-Mail-Adresse" 
-        style={{ flexGrow: 2 }}  // Adjust input field width relative to button
+        disabled={buttonClicked}
       />
-      <button 
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-4" // More padding and margin-left for spacing
-        type="submit"
-        disabled={false}
-        style={{ flexGrow: 1 }}  // Adjust button width
-      >
-        Angebot als PDF erhalten
-      </button>
+      
     </div>
 
-    {showMessage && <p>Wir haben Ihnen soeben ein Angebot zugeschickt</p>}
+    <div className="sv-action" id="sv-nav-next" style={{ width: "calc(40% - 25px)" }}> {/* Adjusted width */}
+      <div className="">
+        <button 
+          className="sd-btn sd-navigation__next-btn" // More padding and margin-left for spacing
+          type="submit"
+          disabled={buttonClicked}
+          style={{width:'100%', padding:'16px'}}
+        >
+          Angebot als PDF erhalten
+        </button>
+      </div>
+    </div>
+
+
+    
+  </div> 
+
+  <div className="sd-text__content sd-question__content" role="presentation" style={{ width: "calc(60% - 25px)" }}> {/* Adjusted width */}
+    <div>{loading ? <Box sx={{ width: '100%' }}><LinearProgress /></Box> :  showMessage && <p style={{fontSize:'12px'}}> { statusMessage } </p>}</div>
+    </div>
+
+
+</div>
+
+
+
+
+
+    
+    
+
   </div>
 </form>
 
@@ -210,13 +261,6 @@ export default function SurveyComponent() {
         )}
 
 
-
-    {createPDF && (
-      
-        <PDFComponent 
-          uuid={generatedUuid}
-          debugValues={debugValues}           />
-    )}
       </main>
    
   );
