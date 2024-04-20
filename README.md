@@ -28,34 +28,7 @@ The workflow of Zofingen Rechner is as follows:
 4. **Email Subscription**: The user's email address is added to a MailerLite group for future communications.
 5. **Email Sending**: The generated PDF offer is sent to the user's email address using MailerLite.
 
-## Development
 
-To set up the project locally, follow these steps:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/zofingen-rechner.git
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   cd zofingen-rechner
-   npm install
-   ```
-
-3. Run the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-   The application will be available at `http://localhost:3000`.
-
-## Contributing
-
-Contributions to Zofingen Rechner are welcome! If you'd like to contribute, please fork the repository, make your changes, and submit a pull request.
 
 ## License
 
@@ -63,4 +36,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-If you have any questions or suggestions, feel free to reach out to us at [your-email@example.com](mailto:your-email@example.com).
+If you have any questions or suggestions, feel free to reach out to us at [demianfueglistaler@icloud.com](mailto:demianfueglistaler@icloud.com).
