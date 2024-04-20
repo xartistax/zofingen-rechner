@@ -168,7 +168,7 @@ export default function SurveyComponent() {
         )}
 
         {showSurveyResult && (
-          <div id="surveyResult" className="show p-12 sd-body sd-body--static">
+          <div id="surveyResult" className="show p-6 sd-body sd-body--static">
           <p style={{ fontSize: "24px", lineHeight: "1.5", fontWeight: "900", color: "#021b55" }}>
             Gemäss Ihren Angaben kostet Sie unser Service: <br />
           
@@ -195,7 +195,7 @@ export default function SurveyComponent() {
 
 
 
-    <div className="sd-question__header sd-element__header sd-question__header--location-top sd-element__header--location-top">
+    <div className="sd-question__header sd-element__header sd-question__header--location-top sd-element__header--location-top mb-3">
       <h5 className="sd-title sd-element__title sd-question__title sd-question__title--required" id="sq_176_ariaTitle">
         <span data-key="q_num" className="sd-element__num" aria-hidden="true">1.</span>
         <span data-key="num-sp">&nbsp;</span>
@@ -208,38 +208,19 @@ export default function SurveyComponent() {
 
 
       <div className="flex flex-col"> {/* Flex container for email field and loading/status message */}
-  <div className="flex items-center justify-between"> {/* Flex container for input and button */}
-    <div className="sd-text__content sd-question__content" role="presentation" style={{ width: "calc(70% - 25px)" }}> {/* Adjusted width */}
-      <input 
-        value={email} 
-        onChange={(e) => setEmail(e.target.value)} 
-        type="email" 
-        className="sd-input sd-text " 
-        id="email" 
-        placeholder="Ihre E-Mail-Adresse" 
-        disabled={buttonClicked}
-      />
-      
-    </div>
+      <div className="flex flex-col"> {/* Flex container for input and button, stacked on mobile */}
+  <div className="sd-text__content sd-question__content" role="presentation"> {/* Adjusted width */}
+    <input 
+      value={email} 
+      onChange={(e) => setEmail(e.target.value)} 
+      type="email" 
+      className="sd-input sd-text" 
+      id="email" 
+      placeholder="Ihre E-Mail-Adresse" 
+      disabled={buttonClicked}
+    />
 
-    <div className="sv-action" id="sv-nav-next" style={{ width: "calc(30% - 25px)" }}> {/* Adjusted width */}
-      <div className="">
-        <button 
-          className="sd-btn sd-navigation__next-btn custom" // More padding and margin-left for spacing
-          type="submit"
-          disabled={buttonClicked}
-          style={{width:'100%', padding:'12px 12px' , color:'#fff'}}
-        >
-          Angebot erhalten
-        </button>
-      </div>
-    </div>
-
-
-    
-  </div> 
-
-  <div className="sd-text__content sd-question__content" role="presentation" style={{ width: "calc(70% - 25px)" }}> {/* Adjusted width */}
+<div className="sd-text__content sd-question__content" role="presentation" style={{ width: "calc(100%)" }}> {/* Adjusted width */}
     <div>{loading ? <Box sx={{ width: '100%' }}><LinearProgress color='primary' /></Box> :  showMessage && 
     
     
@@ -254,13 +235,25 @@ export default function SurveyComponent() {
     
     
     }
-    
+    </div>
+    </div>
 
-    
-    
-    
-    </div>
-    </div>
+
+  </div>
+
+  <div className="mt-9 ">  {/* Margin top for spacing */}
+    <button 
+      className="sd-btn sd-navigation__next-btn custom" // More padding
+      type="submit"
+      disabled={buttonClicked}
+    >
+      Angebot erhalten
+    </button>
+  </div>
+</div>
+
+
+
 
 
 </div>
