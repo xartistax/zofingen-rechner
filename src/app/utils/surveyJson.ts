@@ -7,7 +7,7 @@ export const surveyJson = {
        {
         "type": "text",
         "name": "question1",
-        "title": "Wie viele Rechnungen bezahlen Sie pro Monat?*",
+        "title": "Wie viele Rechnungen bezahlen Sie pro Monat?",
         "isRequired": true,
         "requiredErrorText": "Dieses Feld ist zwingend",
         "inputType": "number",
@@ -22,7 +22,7 @@ export const surveyJson = {
        {
         "type": "text",
         "name": "question2",
-        "title": "Wie viele Rechnungen verschicken Sie pro Monat?*\n",
+        "title": "Wie viele Rechnungen verschicken Sie pro Monat?\n",
         "isRequired": true,
         "requiredErrorText": "Dieses Feld ist zwingend",
         "inputType": "number",

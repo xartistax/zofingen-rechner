@@ -79,7 +79,7 @@ export default function SurveyComponent() {
       
     } else {
       setShowMessage(true)
-      setStatusMessage("Bitte geben Sie eine gèltige Email Adresse an")
+      setStatusMessage("Bitte geben Sie eine gültige Email Adresse an")
     }
 
 
@@ -169,7 +169,7 @@ export default function SurveyComponent() {
 
         {showSurveyResult && (
           <div id="surveyResult" className="show p-12 sd-body sd-body--static">
-          <p style={{ fontSize: "24px", lineHeight: "1.5", fontWeight: "900" }}>
+          <p style={{ fontSize: "24px", lineHeight: "1.5", fontWeight: "900", color: "#021b55" }}>
             Gemäss Ihren Angaben kostet Sie unser Service: <br />
           
               <span className="totalValueBox">
@@ -183,7 +183,7 @@ export default function SurveyComponent() {
             
           </p>
         
-          <p style={{ fontSize: "16px", fontWeight: "light" }} className='mt-5'>
+          <p style={{ fontSize: "16px", fontWeight: "light", color:"rgba(0, 0, 0, 0.91)" }} className='mt-5'>
             Möchten Sie ein detailliertes <b>Angebot als PDF erhalten? </b> Tragen Sie einfach nachfolgend Ihre E-Mail-Adresse ein.
           </p>
         
@@ -199,7 +199,7 @@ export default function SurveyComponent() {
       <h5 className="sd-title sd-element__title sd-question__title sd-question__title--required" id="sq_176_ariaTitle">
         <span data-key="q_num" className="sd-element__num" aria-hidden="true">1.</span>
         <span data-key="num-sp">&nbsp;</span>
-        <span className="sv-string-viewer sv-string-viewer--multiline">Ihre E-Mail-Adresse*</span>
+        <span className="sv-string-viewer sv-string-viewer--multiline">Ihre E-Mail-Adresse </span>
         <span data-key="req-sp">&nbsp;</span><span data-key="req-text" className="sd-question__required-text" aria-hidden="true">*</span>
       </h5>
       </div>
