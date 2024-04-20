@@ -4,6 +4,55 @@
 
 
 
+:root {
+  --primary: #fff;
+  --background: #021b55;
+  --background-dim: #f3f3f3;
+  --background-dim-light: #f9f9f9;
+  --primary-foreground: #ffffff;
+  --foreground: #161616;
+  --base-unit: 8px;
+
+
+  --original-background: var(--background);
+  /* Convert to HSL */
+  --hsl-background: hsl(var(--original-background));
+  /* Adjust lightness */
+  --lighter-background: hsl(var(--hsl-background), 10%);
+  /* Convert back to hexadecimal */
+  --lighter-background-hex: #lighter-background;
+}
+
+
+.sd-btn {
+  color: var(--background) !important;
+}
+
+.sd-btn.custom {
+  color: #fff !important;
+}
+.sd-btn.custom:hover{
+  background-color: var(--background) !important;
+}
+
+.sd-btn--action {
+  background-color: var(--background) !important;;
+  color: var(--primary) !important;
+}
+
+.sd-input:focus, .sd-input.sd-dropdown:focus-within {
+  box-shadow: var(--sjs-shadow-inner-reset, inset 0px 0px 0px 0px rgba(0, 0, 0, 0.15)), 0 0 0 2px var(--background, #fff) !important;
+}
+
+
+.sv-list__item.sv-list__item--selected .sv-list__item-body, .sv-list__item.sv-list__item--selected:hover .sv-list__item-body, .sv-list__item.sv-list__item--selected.sv-list__item--focused .sv-list__item-body, .sv-multi-select-list .sv-list__item.sv-list__item--selected.sv-list__item--focused .sv-list__item-body, li:focus .sv-list__item.sv-list__item--selected .sv-list__item-body {
+  background: var(--background) !important;
+  
+
+ 
+}
+
+
 
 .hidden {
   display: none;
@@ -14,4 +63,17 @@
 
   background-color: var(--sjs-general-backcolor-dim, var(--background-dim, #fff));
 
+}
+
+
+.sd-question__required-text {
+  color: var(--background) !important;
+}
+
+.sd-error { 
+  background-color: rgba(2, 27, 85, 0.1) !important;
+  color: rgba(2, 27, 85, 1) !important;
+}
+.sd-input--error {
+  background-color: rgba(2, 27, 85, 0.1) !important;
 }

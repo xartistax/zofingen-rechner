@@ -184,7 +184,7 @@ export default function SurveyComponent() {
           </p>
         
           <p style={{ fontSize: "16px", fontWeight: "light" }} className='mt-5'>
-            Möchten Sie ein detailliertes Angebot als PDF erhalten? Tragen Sie einfach nachfolgend Ihre E-Mail-Adresse ein.
+            Möchten Sie ein detailliertes <b>Angebot als PDF erhalten? </b> Tragen Sie einfach nachfolgend Ihre E-Mail-Adresse ein.
           </p>
         
           {/* Email input field and submit button */}
@@ -209,7 +209,7 @@ export default function SurveyComponent() {
 
       <div className="flex flex-col"> {/* Flex container for email field and loading/status message */}
   <div className="flex items-center justify-between"> {/* Flex container for input and button */}
-    <div className="sd-text__content sd-question__content" role="presentation" style={{ width: "calc(60% - 25px)" }}> {/* Adjusted width */}
+    <div className="sd-text__content sd-question__content" role="presentation" style={{ width: "calc(70% - 25px)" }}> {/* Adjusted width */}
       <input 
         value={email} 
         onChange={(e) => setEmail(e.target.value)} 
@@ -222,15 +222,15 @@ export default function SurveyComponent() {
       
     </div>
 
-    <div className="sv-action" id="sv-nav-next" style={{ width: "calc(40% - 25px)" }}> {/* Adjusted width */}
+    <div className="sv-action" id="sv-nav-next" style={{ width: "calc(30% - 25px)" }}> {/* Adjusted width */}
       <div className="">
         <button 
-          className="sd-btn sd-navigation__next-btn" // More padding and margin-left for spacing
+          className="sd-btn sd-navigation__next-btn custom" // More padding and margin-left for spacing
           type="submit"
           disabled={buttonClicked}
-          style={{width:'100%', padding:'16px'}}
+          style={{width:'100%', padding:'12px 12px' , color:'#fff'}}
         >
-          Angebot als PDF erhalten
+          Angebot erhalten
         </button>
       </div>
     </div>
@@ -239,8 +239,27 @@ export default function SurveyComponent() {
     
   </div> 
 
-  <div className="sd-text__content sd-question__content" role="presentation" style={{ width: "calc(60% - 25px)" }}> {/* Adjusted width */}
-    <div>{loading ? <Box sx={{ width: '100%' }}><LinearProgress /></Box> :  showMessage && <p style={{fontSize:'12px'}}> { statusMessage } </p>}</div>
+  <div className="sd-text__content sd-question__content" role="presentation" style={{ width: "calc(70% - 25px)" }}> {/* Adjusted width */}
+    <div>{loading ? <Box sx={{ width: '100%' }}><LinearProgress color='primary' /></Box> :  showMessage && 
+    
+    
+    <div role="alert" aria-live="polite" className="sd-error sd-element__erbox sd-question__erbox sd-element__erbox--above-element sd-question__erbox--above-question" id="sq_104_errors">
+      <div>
+        <span aria-hidden="true"></span>
+        <span>
+          <span className="sv-string-viewer">{ statusMessage }</span>
+          </span>
+          </div>
+          </div>
+    
+    
+    }
+    
+
+    
+    
+    
+    </div>
     </div>
 
 
