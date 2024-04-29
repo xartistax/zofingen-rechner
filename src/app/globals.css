@@ -77,3 +77,10 @@
 .sd-input--error {
   background-color: rgba(2, 27, 85, 0.1) !important;
 }
+
+
+.sd-body.sd-body--static {
+  max-width: 100% !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
