@@ -25,6 +25,7 @@ export interface DebugValues {
   mitarbeiter: number;
   total: string;
   monthly: string;
+  answers: { question1: any, question2: any, question3: any, question4: any },
 }
 
 
@@ -104,6 +105,8 @@ export default function SurveyComponent() {
     const mwst = Calculator.calculateMwst(q3);
     const mitarbeiter = Calculator.calculateMitarbeiter(q4);
 
+
+    console.log(survey.data); 
     if (rechnungen_1 !== undefined && rechnungen_2 !== undefined && mwst !== undefined && mitarbeiter !== undefined) {
 
       const total = rechnungen_1 + rechnungen_2 + mwst + mitarbeiter;
@@ -116,6 +119,12 @@ export default function SurveyComponent() {
         mitarbeiter,
         total: String(total),
         monthly: String(monthly),
+        answers : {
+          question1: q1,
+          question2: q2,
+          question3: q3,
+          question4: q4
+        }
     };
 
       setMonthlyCost(monthly.toFixed(2)); 

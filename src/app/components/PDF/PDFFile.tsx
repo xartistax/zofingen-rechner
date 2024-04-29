@@ -43,6 +43,11 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontWeight: 'light',
   },
+  tableCellBold: {
+    textAlign: 'left',
+    fontWeight: 'bold',
+
+  },
   tableHeader: {
     textAlign: 'left',
     fontWeight: 'bold',
@@ -56,11 +61,14 @@ const PDFFile: React.FC<{ uuid: string; debugValues: DebugValues }> = ({ uuid, d
   const mwst = debugValues.mwst / 12
   const mitarbeiter = debugValues.mitarbeiter / 12
 
+  const transactions = debugValues.answers.question1 + debugValues.answers.question2
+  const mehrzweckMethode = debugValues.answers.question3
+  const anzahlMitarbeiter = debugValues.answers.question4
+
   const tableData = [
-    { leistungen: 'Kreditoren', details: 'Wie viele Rechnungen bezahlen Sie pro Monat', jeMonat: `${rechnung_1}.-` },
-    { leistungen: 'Debitoren', details: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.', jeMonat: `${rechnung_2}.-` },
-    { leistungen: 'Mwst Pflichtig', details: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.', jeMonat: `${mwst}.-` },
-    { leistungen: 'Anzahl Mitarbeiter', details: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.', jeMonat: `${mitarbeiter}.-` }
+    { leistungen: ' Buchhaltung (inkl. Jahresabschluss) ', details: `bis ${ transactions } Transaktionen / Jahr`, jeMonat: `${rechnung_1 + rechnung_2} .-` },
+    { leistungen: ' Mehrwertsteuerberechnung ', details: 'Pauschal', jeMonat: `${mwst}.-` } ,
+    { leistungen: ' Lohnbuchhaltung', details: ` ${anzahlMitarbeiter} MitarbeiterInnen `, jeMonat: `${mitarbeiter}.-` }
   ];
 
   return (
@@ -68,12 +76,14 @@ const PDFFile: React.FC<{ uuid: string; debugValues: DebugValues }> = ({ uuid, d
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
           <Text style={{ color: 'rgb(1, 32, 104)', fontSize: '28px', fontWeight: 'extrabold' }}>Unverbindliche Offerte</Text>
-          <Text style={{ marginBottom: '25px', marginTop: '25px' }}>Vielen Dank für Ihre Anfrage</Text>
-          <Text>Die Ihrem Bedarf entsprechenden Leistungen habe ich individuell für Sie zusammengestellt. (Die hierbei errechneten Konditionen ergeben sich aus der Anzahl der monatlichen Transaktionen: die bezahlten und versendeten Rechnungen sowie die effektiv genutzten Dienstleistungen.) </Text>
+          <Text style={{ marginBottom: '25px', marginTop: '25px' }}> Wir danken Ihnen für Ihre Anfrage und das damit verbundene Interesse an unseren Dienstleistungen. </Text>
+          <Text>
+           Basierend auf den spezifischen Bedürfnissen Ihres Unternehmens haben wir ein individuelles Servicepaket berechnet. Die Konditionen berechnen sich aus den monatlichen Transaktionen, einschliesslich der ausgestellten und bezahlten Rechnungen sowie der tatsächlich in Anspruch genommenen Dienstleistungen.
+          </Text>
         </View>
 
         <View style={styles.section}>
-          <Text style={{ color: 'rgb(1, 32, 104)', fontSize: '16px', fontWeight: 'extrabold' }}>Ihr individuelles Leistungspaket:</Text>
+          <Text style={{ color: 'rgb(1, 32, 104)', fontSize: '16px', fontWeight: 'extrabold' }}> Ihr massgeschneidertes Leistungspaket beinhaltet: </Text>
         </View>
 
         <View style={styles.section}>
@@ -93,9 +103,20 @@ const PDFFile: React.FC<{ uuid: string; debugValues: DebugValues }> = ({ uuid, d
               <View style={styles.tableRow} key={index}>
                 <View style={styles.tableCol}>
                   <Text style={styles.tableCell}>{rowData.leistungen}</Text>
+                  {index === 1 && ( // Conditionally render the additional Text component
+        <Text style={styles.tableCellBold} >
+          
+           {mehrzweckMethode === "Item 1" && (" (Keine Mehrwertsteuer)")}
+           {mehrzweckMethode === "Item 2" && (" (Effektive Abrechnungsmethode)")}
+           {mehrzweckMethode === "Item 3" && (" (Saldo Abrechnungsverfahren)")}
+           {mehrzweckMethode === "Item 4" && (" (Ich weis es nicht)x")}
+           
+            </Text>
+      )}
                 </View>
                 <View style={styles.tableCol}>
-                  <Text style={styles.tableCell}>{rowData.details}</Text>
+                  <Text style={styles.tableCell}> {rowData.details} </Text>
+                  
                 </View>
                 <View style={styles.tableCol}>
                   <Text style={styles.tableCell}>{rowData.jeMonat}</Text>
@@ -108,7 +129,7 @@ const PDFFile: React.FC<{ uuid: string; debugValues: DebugValues }> = ({ uuid, d
         <View style={{ ...styles.section, borderTopWidth: 1, borderColor: 'black', paddingTop: 10 }}>
           <View style={styles.tableRow}>
             <View style={{ ...styles.tableCol, flex: 2 }}>
-              <Text style={{ ...styles.tableCell, fontWeight: 'bold' }}> Monatlicher Gesamtaufwand (exklusive MwSt.)</Text>
+              <Text style={{ ...styles.tableCell, fontWeight: 'bold' }}> Monatlicher Gesamtaufwand (exkl. MwSt.)</Text>
             </View>
             <View style={styles.tableCol}>
               {/* Placeholder for the value */}
@@ -123,24 +144,33 @@ const PDFFile: React.FC<{ uuid: string; debugValues: DebugValues }> = ({ uuid, d
 
 
         <View style={{ ...styles.section  }}>
-        <Text style={{ color: 'rgb(1, 32, 104)', fontSize: '14px', fontWeight: 'extrabold', marginBottom: 10 }}>Auf meine Zahlen können Sie zählen:</Text>
-          <Text>Ich unterstütze Unternehmer in den Bereichen Buchhaltung, Lohnwesen und Steuern, damit Sie sich auf Ihr Kerngeschäft konzentrieren können.</Text>
-          <Text style={{ paddingTop: 10, paddingBottom: 5 }}>Damit das bestmöglich gelingt, passt sich mein Leistungsangebot dem Bedarf Ihres Unternehmens an: Ich arbeite nicht nur für Sie, sondern mit Ihnen an der Steigerung Ihres Erfolgs. Darüber hinaus proﬁtieren Sie von zahlreichen weiteren Vorteilen wie:</Text>
-       
+        <Text style={{ color: 'rgb(1, 32, 104)', fontSize: '14px', fontWeight: 'extrabold', marginBottom: 10 }}>Vertrauen Sie auf unsere Expertise: </Text>
+          <Text> Als Ihr Partner in den Bereichen Buchhaltung, Lohnbuchhaltung und Steuerberatung ermöglichen wir Ihnen, sich voll und ganz auf Ihr Kerngeschäft zu konzentrieren. Unser Dienstleistungsangebot ist flexibel und passt sich den individuellen Bedürfnissen Ihres Unternehmens an. Wir arbeiten eng mit Ihnen zusammen, um Ihren Erfolg nachhaltig zu fördern.  </Text>
+          
+            <Text style={{ fontWeight: 'bold', paddingTop: '30px' }} > Darüber hinaus bieten wir: </Text>
+            <Text> - Flexible Zahlungsoptionen auf monatlicher Basis</Text>
+            <Text> - Eine genaue Abrechnung basierend auf den tatsächlich genutzten Leistungen </Text>
 
-  
-            <Text> - Monatlicher Zahlungsweise</Text>
-            <Text> - Punktgenaue Berechnung der tatsächlich in Anspruch genommenen Leistungen</Text>
-            <Text> - Jederzeitige Kündigungsmöglichkeit ohne Vorlauf</Text>
-            <Text> - Und vielem mehr.</Text>
 
 
           </View>
 
 
           <View style={{ ...styles.section  }}>
-            <Text>Haben Sie Fragen zu meinem Angebot? Dann lassen Sie uns über Ihr Vorhaben und Ihre Bedürfnisse sprechen. Ich freue mich, Ihr Unternehmen mit meinem Engagement begleiten zu dürfen!</Text>
+            <Text> Haben Sie weitere Fragen zu unserem Angebot oder wünschen Sie eine individuelle Beratung?  </Text>
+            <Text> Wir stehen Ihnen gerne für ein persönliches Gespräch zur Verfügung und freuen uns darauf, Ihr Unternehmen mit unserer fachlichen Kompetenz und unserem Engagement zu unterstützen. </Text>
           </View>
+
+
+
+          <View style={{ ...styles.section  }}>
+            <Text>  Philippe Bally </Text>
+            <Text>  Dipl. Treuhänder FA / Steuerexperte </Text>
+            <Text>  Zofingen Treuhand AG </Text>
+          </View>
+
+
+
 
 
           

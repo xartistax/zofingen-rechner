@@ -16,6 +16,7 @@ export interface AppContextType {
     mitarbeiter: number;
     total: string;
     monthly: string;
+    answers: { question1: number, question2: number, question3: string, question4: number },
   };
   setDebugValues: React.Dispatch<
     React.SetStateAction<{
@@ -25,6 +26,7 @@ export interface AppContextType {
       mitarbeiter: number;
       total: string;
       monthly: string;
+      answers: { question1: number, question2: number, question3: string, question4: number },
     }>
   >;
 }
@@ -43,7 +45,13 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     mwst: 0,
     mitarbeiter: 0,
     total: "",
-    monthly: ""
+    monthly: "",
+    answers: {
+      question1 : 0,
+      question2 : 0,
+      question3 : "",
+      question4 : 0
+    }
   });
 
   return (
